@@ -177,7 +177,7 @@ function LoginModalWrapper({ open, onOpenChange }: { open: boolean; onOpenChange
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-center text-2xl font-bold">Welcome to Ai Beauty Analyzer</DialogTitle>
+          <DialogTitle className="text-center text-2xl font-bold">Welcome to AI Beauty Analyzer</DialogTitle>
           <DialogDescription className="text-center">Sign in to continue your journey</DialogDescription>
         </DialogHeader>
         <LoginForm onSuccess={() => onOpenChange(false)} />

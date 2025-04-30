@@ -1,5 +1,5 @@
 export const SiteInfo = {
-  metaTitle: 'Ai Beauty Analyzer',
+  metaTitle: 'AI Beauty Analyzer',
   metaDescription:
     'Advanced AI-powered beauty analysis tool that evaluates facial features and provides personalized beauty scores and recommendations.',
   domain: 'aibeautyanalyzer.com',
@@ -15,7 +15,7 @@ export const SiteInfo = {
 
 export const About = {
   mission:
-    "At Ai Beauty Analyzer, we're providing a fun and innovative way to explore AI-powered beauty analysis. Created as a quick project by the team behind CraveU.ai, this tool demonstrates the capabilities of modern AI in a playful context.",
+    "At AI Beauty Analyzer, we're providing a fun and innovative way to explore AI-powered beauty analysis. Created as a quick project by the team behind CraveU.ai, this tool demonstrates the capabilities of modern AI in a playful context.",
   team: {
     company: 'Cozyai LLC',
     mainProduct: 'CraveU.ai',
