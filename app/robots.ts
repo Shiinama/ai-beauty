@@ -5,6 +5,6 @@ export default function robots() {
         userAgent: '*'
       }
     ],
-    sitemap: `https://ai-beauty-analyzer.getwhynot.org/sitemap.xml`
+    sitemap: `https://getwhynot.org/sitemap.xml`
   }
 }
