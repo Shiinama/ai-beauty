@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "next-cloudflare-template",
+  "compatibility_date": "2025-04-22",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "demo",
+      "database_id": "120f9d8a-8bf9-4a8f-81cb-b707fc90b5da",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "pages_build_output_dir": ".vercel/output/static"
+}
