@@ -1,5 +1,6 @@
 export const SiteInfo = {
-  metaTitle: 'AI Beauty Analyzer',
+  brandName: 'AI Beauty Analyzer',
+  metaTitle: 'See Your Face Through AI Eyes - Beauty Analysis Made Simple | AI Beauty Analyzer',
   metaDescription:
     'Advanced AI-powered beauty analysis tool that evaluates facial features and provides personalized beauty scores and recommendations.',
   domain: 'aibeautyanalyzer.com',

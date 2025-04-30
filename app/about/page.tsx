@@ -9,7 +9,7 @@ export default function AboutPage() {
       <div className="mb-16 text-center">
         <h1 className="mb-4 text-5xl font-bold">About Us</h1>
         <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
-          Learn more about the team behind {SiteInfo.metaTitle}
+          Learn more about the team behind {SiteInfo.brandName}
         </p>
       </div>
 
