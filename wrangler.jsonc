@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "next-cloudflare-template",
+  "name": "ai-beauty",
   "compatibility_date": "2025-04-22",
   "compatibility_flags": [
     "nodejs_compat"
@@ -8,8 +8,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "demo",
-      "database_id": "120f9d8a-8bf9-4a8f-81cb-b707fc90b5da",
+      "database_name": "cozy-db",
+      "database_id": "76885388-45a2-435f-b2cd-b76740a4d498",
       "migrations_dir": "migrations"
     }
   ],

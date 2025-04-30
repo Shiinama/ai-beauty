@@ -7,8 +7,9 @@ import { Button } from './ui/button'
 
 const SignOutButton = () => {
   return (
-    <Button variant="outline" size="icon" onClick={() => signOut()}>
+    <Button variant="outline" onClick={() => signOut()}>
       <LogOut />
+      Sign Out
     </Button>
   )
 }

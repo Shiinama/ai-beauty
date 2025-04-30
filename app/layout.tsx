@@ -3,24 +3,21 @@ import { SessionProvider } from 'next-auth/react'
 import Container from '@/components/container'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import { ThemeProvider } from '@/components/theme-provider'
+import { UserProvider } from '@/components/providers/user-provider'
 import { Toaster } from '@/components/ui/sonner'
+import { SiteInfo } from '@/config/site-info'
 
 import type { Metadata } from 'next'
 
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bytespark.me'),
-  title: {
-    template: '%s | BrandName',
-    default: 'BrandName'
-  },
-  description: 'Think, Write, Code',
+  title: SiteInfo.metaTitle,
+  description: SiteInfo.metaDescription,
   icons: {
     icon: '/logo.svg'
   },
-  authors: [{ name: 'Felix', url: 'https://github.com/sdrpsps' }],
+  authors: [{ name: 'Felix', url: 'https://github.com/Shiinama/ai-beauty' }],
   creator: 'Felix',
   openGraph: {
     images: ['/logo.svg']
@@ -35,14 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <SessionProvider>
+        <SessionProvider>
+          <UserProvider>
             <Header />
             <Container>{children}</Container>
             <Footer />
-          </SessionProvider>
-          <Toaster richColors />
-        </ThemeProvider>
+          </UserProvider>
+        </SessionProvider>
+        <Toaster richColors />
       </body>
     </html>
   )

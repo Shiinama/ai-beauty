@@ -49,8 +49,8 @@
 1. 克隆仓库：
 
 ```bash
-git clone https://github.com/Shiinama/next-cloudflare-template
-cd next-cloudflare-template
+git clone https://github.com/Shiinama/ai-beauty
+cd ai-beauty
 ```
 
 2. 安装依赖：

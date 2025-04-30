@@ -80,3 +80,13 @@ export const authenticators = sqliteTable(
     })
   })
 )
+
+export const userAnalysisUsage = sqliteTable('userAnalysisUsage', {
+  id: text('id')
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  userId: text('userId')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  usageCount: integer('usageCount').notNull().default(0)
+})
