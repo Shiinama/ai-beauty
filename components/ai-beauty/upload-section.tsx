@@ -56,7 +56,7 @@ export const UploadSection = ({
                 <Upload className="h-6 w-6 text-purple-400" />
               </div>
               <p className="mb-1 font-medium text-white">Upload your selfie</p>
-              <p className="text-sm text-gray-400">JPG, PNG, or GIF (max. 10MB)</p>
+              <p className="text-sm text-gray-400">JPG, PNG, or GIF (max. 3MB)</p>
             </div>
           ) : (
             <div className="relative overflow-hidden rounded-xl">

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useSession } from 'next-auth/react'
 import { useState, useRef } from 'react'
+import { toast } from 'sonner'
 
 import { scorePortrait } from '@/actions/imageToText'
 import { hasRemainingFreeAnalysis } from '@/actions/userAnalysis'
@@ -26,7 +27,18 @@ export const AIBeauty = () => {
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      setImage(e.target.files[0])
+      const file = e.target.files[0]
+      // Check if file size exceeds 3MB (3 * 1024 * 1024 bytes)
+      if (file.size > 3 * 1024 * 1024) {
+        toast.error('Image size exceeds 3MB limit. Please select a smaller image.')
+        // Reset the file input
+        if (fileInputRef.current) {
+          fileInputRef.current.value = ''
+        }
+        return
+      }
+
+      setImage(file)
       setPortraitScore(null)
     }
   }
