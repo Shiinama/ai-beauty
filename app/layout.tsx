@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: SiteInfo.metaTitle,
   description: SiteInfo.metaDescription,
   icons: {
-    icon: '/logo.svg'
+    icon: '/favicon.ico'
   },
   authors: [{ name: 'Felix', url: 'https://github.com/Shiinama/ai-beauty' }],
   creator: 'Felix',
