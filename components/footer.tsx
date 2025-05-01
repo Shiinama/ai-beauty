@@ -40,6 +40,11 @@ const Footer: React.FC = () => {
                   CraveU AI Creator Benefit
                 </Link>
               </li>
+              <li>
+                <Link href="/blogs" className="text-sm text-gray-400 transition-colors hover:text-blue-400">
+                  Blogs
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

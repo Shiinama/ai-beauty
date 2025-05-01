@@ -53,7 +53,7 @@ export default async function ArticlesPage() {
                 <tr key={article.id}>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm font-medium">{article.title}</div>
-                    <div className="text-muted-foreground text-sm">{article.slug}</div>
+                    <div className="text-muted-foreground truncate text-sm">{article.slug}</div>
                   </td>
                   <td className="text-muted-foreground px-6 py-4 text-sm whitespace-nowrap">
                     {formatDate(article.createdAt)}

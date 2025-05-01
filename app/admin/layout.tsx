@@ -10,5 +10,5 @@ export default async function AdminLayout({ children }: { children: ReactNode })
   if (s?.user?.id !== process.env.NEXT_PUBLIC_ADMIN_ID) {
     redirect('/')
   }
-  return <div className="container mx-auto py-8">{children}</div>
+  return <div className="py-8">{children}</div>
 }
