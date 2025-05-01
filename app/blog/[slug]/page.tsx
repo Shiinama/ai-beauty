@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getArticleBySlug } from '@/actions/ai-content'
 import BlogBody from '@/components/blog/blog-body'
 import PageError from '@/components/page-error'
+import { SiteInfo } from '@/config/site-info'
 import { formatDate } from '@/lib/utils'
 
 export const runtime = 'edge'
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PostSlugPageProps) {
   }
 
   return {
-    title: article.title,
+    title: `${article.title} | ${SiteInfo.brandName}`,
     description: article.excerpt
   }
 }

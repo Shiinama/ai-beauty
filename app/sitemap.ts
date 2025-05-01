@@ -22,6 +22,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: 'https://ai-beauty-analyzer.com'
     },
     {
+      url: 'https://ai-beauty-analyzer.com/blogs'
+    },
+    {
       url: 'https://ai-beauty-analyzer.com/about'
     },
     ...publishedArticles

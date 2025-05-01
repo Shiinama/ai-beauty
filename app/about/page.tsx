@@ -1,9 +1,15 @@
+import { Metadata } from 'next'
 import React from 'react'
 
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 import { About, SiteInfo } from '@/config/site-info'
 
 export const runtime = 'edge'
+
+export const metadata: Metadata = {
+  title: `About Us | ${SiteInfo.brandName}`,
+  description: `Learn about our mission, team, and the story behind ${SiteInfo.brandName}. ${About.team.company} is the creator of ${About.team.mainProduct}, specializing in ${About.team.expertise.substring(0, 80)}...`
+}
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12">

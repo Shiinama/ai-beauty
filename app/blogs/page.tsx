@@ -1,9 +1,16 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 
 import { getAllArticles } from '@/actions/ai-content'
+import { SiteInfo } from '@/config/site-info'
 import { formatDate } from '@/lib/utils'
 
 export const runtime = 'edge'
+
+export const metadata: Metadata = {
+  title: `Insights & Articles | ${SiteInfo.brandName} Blog`,
+  description: `Explore our latest articles on beauty analysis, AI technology, and facial aesthetics. Discover expert insights, tips, and trends in the world of AI-powered beauty assessment.`
+}
 
 export default async function BlogPage() {
   const allArticles = await getAllArticles()
