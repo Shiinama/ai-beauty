@@ -16,6 +16,10 @@ interface ArticleGenerationParams {
   keyword: string
 }
 
+interface BatchArticleGenerationParams {
+  keywords: string[]
+}
+
 export async function generateArticle({ keyword }: ArticleGenerationParams): Promise<{
   title: string
   slug: string
@@ -41,7 +45,7 @@ export async function generateArticle({ keyword }: ArticleGenerationParams): Pro
   - Include bullet points and lists where appropriate
   - Add internal linking opportunities where relevant
   
-  Produce original, accurate, and valuable content of at least 5,000 tokens. Output ONLY the article content.`
+  Produce original, accurate, and valuable content of at least 4,000 tokens. Output ONLY the article content.`
 
   const userPrompt = `Create an article about "${keyword}". Optimize it for search engines while maintaining high-quality, valuable content for readers.`
 
@@ -188,4 +192,71 @@ export async function deleteArticle(slug: string) {
   const database = createDb()
   await database.delete(posts).where(eq(posts.slug, slug))
   return { success: true }
+}
+
+export async function generateBatchArticles(params: BatchArticleGenerationParams) {
+  const { keywords } = params
+
+  // Generate articles one by one
+  const articles = []
+  for (const keyword of keywords) {
+    try {
+      const article = await generateArticle({ keyword })
+      articles.push({
+        keyword,
+        article,
+        status: 'success'
+      })
+    } catch (error) {
+      articles.push({
+        keyword,
+        error: error instanceof Error ? error.message : 'Unknown error',
+        status: 'error'
+      })
+    }
+  }
+
+  return articles
+}
+
+export async function saveBatchArticles(
+  articles: Array<{
+    title: string
+    slug: string
+    content: string
+    excerpt: string
+  }>,
+  publishImmediately = true
+) {
+  const database = createDb()
+  const results = []
+
+  for (const article of articles) {
+    try {
+      // Prepare article data
+      const postData = {
+        slug: article.slug,
+        title: article.title,
+        excerpt: article.excerpt,
+        content: article.content,
+        publishedAt: publishImmediately ? new Date() : undefined,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+
+      await database.insert(posts).values(postData)
+      results.push({
+        title: article.title,
+        status: 'success'
+      })
+    } catch (error) {
+      results.push({
+        title: article.title,
+        status: 'error',
+        error: error instanceof Error ? error.message : 'Unknown error'
+      })
+    }
+  }
+
+  return results
 }

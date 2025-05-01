@@ -13,9 +13,14 @@ export default async function ArticlesPage() {
     <>
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold">Article Management</h1>
-        <Link href="/admin/articles/new">
-          <Button>Create New Article</Button>
-        </Link>
+        <div>
+          <Link href="/admin/articles/new">
+            <Button>Create New Article</Button>
+          </Link>
+          <Link href="/admin/articles/batch">
+            <Button className="ml-4">Batch Create</Button>
+          </Link>
+        </div>
       </div>
 
       <div className="border-border bg-card overflow-hidden rounded-lg border shadow">

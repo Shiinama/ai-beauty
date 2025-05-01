@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const publishedArticles = allArticles
     .filter((article) => article.publishedAt)
     .map((i) => ({
-      url: `https://ai-beauty-analyzer.com/${i.slug}`
+      url: `https://ai-beauty-analyzer.com/blog/${i.slug}`
     }))
 
   return [
