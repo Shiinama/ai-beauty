@@ -5,10 +5,10 @@ export const runtime = 'edge'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
-      url: 'https://getwhynot.org'
+      url: 'https://ai-beauty-analyzer.com/'
     },
     {
-      url: 'https://getwhynot.org/about'
+      url: 'https://ai-beauty-analyzer.com//about'
     }
   ]
 }
