@@ -16,7 +16,12 @@ const KV_NAMESPACE_ID = process.env.KV_NAMESPACE_ID
  * 验证必要的环境变量
  */
 const validateEnvironment = () => {
-  const requiredEnvVars = ['CLOUDFLARE_ACCOUNT_ID', 'CLOUDFLARE_API_TOKEN', 'OPENAI_API_KEY', 'NEXT_PUBLIC_ADMIN_ID']
+  const requiredEnvVars = [
+    'CLOUDFLARE_ACCOUNT_ID',
+    'CLOUDFLARE_API_TOKEN',
+    'NEXT_PUBLIC_OPENAI_API_KEY',
+    'NEXT_PUBLIC_ADMIN_ID'
+  ]
   const missing = requiredEnvVars.filter((varName) => !process.env[varName])
 
   if (missing.length > 0) {
@@ -202,7 +207,7 @@ const pushPagesSecret = () => {
     'AUTH_GOOGLE_ID',
     'AUTH_SECRET',
     'AUTH_GOOGLE_SECRET',
-    'OPENAI_API_KEY',
+    'NEXT_PUBLIC_OPENAI_API_KEY',
     'NEXT_PUBLIC_ADMIN_ID'
   ]
 

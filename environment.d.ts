@@ -9,7 +9,6 @@ interface CloudflareEnv {
   DB: D1Database
   KV: KVNamespace
   AI: Ai
-  OPENAI_API_KEY: string
 }
 
 type Env = CloudflareEnv
