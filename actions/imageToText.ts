@@ -10,27 +10,49 @@ export const imageToText = async ({ buffer, prompt }: { buffer: Uint8Array<Array
   // Run the AI model with the image and prompt
   const result = await cloudflareAI.run('@cf/llava-hf/llava-1.5-7b-hf', {
     image: Array.from(buffer),
-    prompt: prompt ?? 'Analyze this image in detail, focusing on visual elements, composition, and quality.',
-    max_tokens: 512
+    prompt: prompt ?? 'Analyze this image in detail, focusing on visual elements, composition, and quality.'
   })
   return result
 }
 
 export const scorePortrait = async ({ buffer, userId }: { buffer: Uint8Array<ArrayBuffer>; userId: string }) => {
   // First, get the image description
-  const imageDescription = await imageToText({
+  const { description } = await imageToText({
     buffer,
     prompt: `
-    You are a professional portrait analyst and beauty expert.
-    
-    Analyze this portrait in detail, focusing specifically on:
-    1. Facial features (eyes, nose, mouth, facial structure, symmetry)
-    2. Skin quality and complexion
-    3. Expression and emotional impact
-    4. Technical aspects (lighting, composition, clarity, color balance)
-    5. Overall aesthetic appeal
-    
-    Be objective, detailed, and comprehensive in your analysis.
+    First, determine if this is a clear human face portrait suitable for beauty analysis.
+
+    If it IS a suitable portrait, analyze these precise facial measurements:
+    1. Facial Proportions:
+       - Vertical thirds ratio (1:1:1 ideal): forehead:midface:lower face
+       - Facial width to height ratio (ideal 3:4)
+       - Bilateral symmetry percentage (100% being perfect symmetry)
+
+    2. Eyes:
+       - Interpupillary distance (ideal: 1/2 of face width)
+       - Eye width to face width ratio (ideal: 1/5 each eye)
+       - Eye spacing (ideal: one eye width between eyes)
+       - Upper to lower eyelid ratio
+
+    3. Nose:
+       - Nose width to face width ratio (ideal: 1/5 of face width)
+       - Nose length to face height ratio (ideal: 1/3 of face)
+       - Nasolabial angle (ideal: 90-120 degrees)
+       - Nasofrontal angle (ideal: 115-130 degrees)
+
+    4. Mouth:
+       - Mouth width to interpupillary distance ratio (ideal: 1.5:1)
+       - Upper to lower lip ratio (ideal: 1:1.6)
+       - Lip height to face height ratio
+       - Vermillion border definition (high/medium/low)
+
+    5. Technical Quality:
+       - Image resolution (high/medium/low)
+       - Lighting evenness (percentage)
+       - Focus sharpness (high/medium/low)
+       - Color accuracy (high/medium/low)
+
+    Provide numerical estimates where possible. Be precise and objective.
     `
   })
 
@@ -38,54 +60,61 @@ export const scorePortrait = async ({ buffer, userId }: { buffer: Uint8Array<Arr
   const cloudflareAI = createAI()
 
   const prompt = `
-  You are a professional beauty analyst with expertise in facial aesthetics and portrait photography.
+  # Portrait Analysis System
+  You are an AI portrait analyzer with expertise in facial aesthetics and photography.
+
+  ## REFERENCE SCALE
+  - 10/10: Perfect (theoretical only)
+  - 8-9/10: Exceptional (top models/celebrities)
+  - 7/10: Audrey Hepburn (reference point)
+  - 5-6/10: Average
+  - 3-4/10: Below average
+  - 1-2/10: Poor
   
-  ### TASK
-  Based on the following portrait description, provide a detailed analysis and scoring in JSON format ONLY.
+  ## PORTRAIT DESCRIPTION
+  ${description}
+
+  ## SCORING GUIDELINES
+  - Be conservative with scores. Most portraits should score between 3-6.
+  - Base scores on objective facial proportions and technical quality.
+  - Consider classical beauty standards and photographic principles.
   
-  ### PORTRAIT DESCRIPTION
-  ${imageDescription}
-  
-  ### OUTPUT INSTRUCTIONS
-  1. You MUST respond ONLY with a valid JSON object.
-  2. Do NOT include any explanatory text, markdown formatting, or code blocks.
-  3. Do NOT include phrases like "Here's the JSON" or "JSON response:".
-  4. The JSON structure must strictly follow the template below.
-  
-  ### JSON TEMPLATE
+  ## OUTPUT FORMAT
+  Respond ONLY with a valid JSON object following this exact structure:
+
   {
-    "overall_score": <number between 1-10, with one decimal precision>,
+    "strengths": ["<strength 1>", "<strength 2>", "<strength 3>"],
+    "areas_for_improvement": ["<improvement 1>", "<improvement 2>", "<improvement 3>", "<improvement 4>"],
+    "summary": "<3-4 sentence comprehensive assessment covering facial features, technical quality, and overall impression>"
+    "overall_score": <number between 1-10 with one decimal place>,
     "facial_features": {
-      "eyes": <integer between 1-10>,
-      "nose": <integer between 1-10>,
-      "mouth": <integer between 1-10>,
-      "facial_structure": <integer between 1-10>
+      "eyes": <integer 1-10>,
+      "nose": <integer 1-10>,
+      "mouth": <integer 1-10>,
+      "facial_structure": <integer 1-10>
     },
     "technical_aspects": {
-      "lighting": <integer between 1-10>,
-      "composition": <integer between 1-10>,
-      "clarity": <integer between 1-10>,
-      "color_balance": <integer between 1-10>
+      "lighting": <integer 1-10>,
+      "composition": <integer 1-10>,
+      "clarity": <integer 1-10>,
+      "color_balance": <integer 1-10>
     },
-    "expression": <integer between 1-10>,
-    "strengths": [<exactly 3-5 specific strengths as short phrases>],
-    "areas_for_improvement": [<exactly 2-4 specific improvement suggestions as short phrases>],
-    "summary": <concise 1-2 sentence summary of overall impression>
+    "expression": <integer 1-10>,
   }
-  
-  Remember: Your response must be ONLY the JSON object with no additional text.
   `
 
-  // Use a text model to generate the structured analysis
-  const analysisResult = await cloudflareAI.run('@cf/meta/llama-4-scout-17b-16e-instruct', {
+  const analysisResult = await cloudflareAI.run('@cf/deepseek-ai/deepseek-r1-distill-qwen-32b', {
     prompt,
     stream: false,
-    max_tokens: 1024
+    temperature: 0.2,
+    max_tokens: 10000,
+    top_p: 0.9,
+    frequency_penalty: 0.0,
+    presence_penalty: 0.0
   })
 
-  if (typeof analysisResult === 'object') {
+  if ('response' in analysisResult) {
     try {
-      // The model might return text before or after the JSON, so we need to extract just the JSON part
       // The model might return text before or after the JSON, so we need to extract just the JSON part
       const jsonMatch = analysisResult.response?.match(/\{[\s\S]*\}/)
       if (!jsonMatch) {
