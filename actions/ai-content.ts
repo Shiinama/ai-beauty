@@ -98,6 +98,8 @@ async function generateArticleExcerpt(content: string) {
     if (typeof analysisResult === 'object') {
       return analysisResult.response
     }
+
+    return ''
   } catch (error) {
     console.error('Error generating excerpt:', error)
     return content.substring(0, 150) + '...' // Fallback to simple truncation

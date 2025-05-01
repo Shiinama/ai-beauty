@@ -22,7 +22,7 @@ export default function NewArticlePage() {
     slug: string
     content: string
     excerpt: string
-  } | null>(null)
+  }>()
   const [isSaving, setIsSaving] = useState(false)
   const [publishImmediately, setPublishImmediately] = useState(true)
 
