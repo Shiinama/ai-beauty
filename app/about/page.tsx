@@ -3,6 +3,7 @@ import React from 'react'
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card'
 import { About, SiteInfo } from '@/config/site-info'
 
+export const runtime = 'edge'
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12">
