@@ -9,7 +9,7 @@ import { posts } from '@/lib/db/schema'
 // 初始化 OpenAI 客户端
 const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY
 })
 
 interface ArticleGenerationParams {

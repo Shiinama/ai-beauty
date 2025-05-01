@@ -16,7 +16,7 @@ const KV_NAMESPACE_ID = process.env.KV_NAMESPACE_ID
  * 验证必要的环境变量
  */
 const validateEnvironment = () => {
-  const requiredEnvVars = ['CLOUDFLARE_ACCOUNT_ID', 'CLOUDFLARE_API_TOKEN']
+  const requiredEnvVars = ['CLOUDFLARE_ACCOUNT_ID', 'CLOUDFLARE_API_TOKEN', 'OPENAI_API_KEY', 'NEXT_PUBLIC_ADMIN_ID']
   const missing = requiredEnvVars.filter((varName) => !process.env[varName])
 
   if (missing.length > 0) {
@@ -198,7 +198,13 @@ const pushPagesSecret = () => {
   console.log('🔐 Pushing environment secrets to Pages...')
 
   // 定义运行时所需的环境变量列表
-  const runtimeEnvVars = ['AUTH_GOOGLE_ID', 'AUTH_SECRET', 'AUTH_GOOGLE_SECRET']
+  const runtimeEnvVars = [
+    'AUTH_GOOGLE_ID',
+    'AUTH_SECRET',
+    'AUTH_GOOGLE_SECRET',
+    'OPENAI_API_KEY',
+    'NEXT_PUBLIC_ADMIN_ID'
+  ]
 
   try {
     // 确保.env文件存在
