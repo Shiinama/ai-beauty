@@ -235,37 +235,52 @@ export async function saveBatchArticles(
     slug: string
     content: string
     excerpt: string
+    selected?: boolean // New optional property to indicate if article is selected for saving
   }>,
   publishImmediately = true
 ) {
   const database = createDb()
   const results = []
 
-  for (const article of articles) {
-    try {
-      // Prepare article data
-      const postData = {
-        slug: article.slug,
-        title: article.title,
-        excerpt: article.excerpt,
-        content: article.content,
-        publishedAt: publishImmediately ? new Date() : undefined,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }
+  // Filter articles if selection is provided
+  const articlesToSave = articles.filter((article) => article.selected !== false) // Save all unless explicitly not selected
 
-      await database.insert(posts).values(postData)
-      results.push({
-        title: article.title,
-        status: 'success'
-      })
-    } catch (error) {
-      results.push({
-        title: article.title,
-        status: 'error',
-        error: error instanceof Error ? error.message : 'Unknown error'
-      })
-    }
+  // Process articles in batches for better efficiency
+  const batchSize = 10
+  for (let i = 0; i < articlesToSave.length; i += batchSize) {
+    const batch = articlesToSave.slice(i, i + batchSize)
+
+    // Create an array of promises for concurrent database operations
+    const savePromises = batch.map(async (article) => {
+      try {
+        // Prepare article data
+        const postData = {
+          slug: article.slug,
+          title: article.title,
+          excerpt: article.excerpt,
+          content: article.content,
+          publishedAt: publishImmediately ? new Date() : undefined,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
+
+        await database.insert(posts).values(postData)
+        return {
+          title: article.title,
+          status: 'success'
+        }
+      } catch (error) {
+        return {
+          title: article.title,
+          status: 'error',
+          error: error instanceof Error ? error.message : 'Unknown error'
+        }
+      }
+    })
+
+    // Wait for all operations in this batch to complete
+    const batchResults = await Promise.all(savePromises)
+    results.push(...batchResults)
   }
 
   return results

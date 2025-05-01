@@ -1,5 +1,3 @@
-'use client'
-
 import { Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -8,11 +6,10 @@ import { toast } from 'sonner'
 import { generateBatchArticles, saveBatchArticles } from '@/actions/ai-content'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import { Textarea } from '@/components/ui/textarea'
-
-export const runtime = 'edge'
 
 export default function BatchArticlesPage() {
   const router = useRouter()
@@ -22,6 +19,7 @@ export default function BatchArticlesPage() {
   const [publishImmediately, setPublishImmediately] = useState(true)
   const [generatedArticles, setGeneratedArticles] = useState<Array<any>>([])
   const [results, setResults] = useState<Array<any>>([])
+  const [selectAll, setSelectAll] = useState(true)
 
   const handleGenerate = async () => {
     if (!keywordsInput.trim()) {
@@ -43,7 +41,14 @@ export default function BatchArticlesPage() {
     setIsGenerating(true)
     try {
       const articles = await generateBatchArticles({ keywords })
-      setGeneratedArticles(articles)
+
+      // Add selected property to each successful article
+      const articlesWithSelection = articles.map((item) => ({
+        ...item,
+        selected: item.status === 'success'
+      }))
+
+      setGeneratedArticles(articlesWithSelection)
 
       const successCount = articles.filter((a) => a.status === 'success').length
       const errorCount = articles.filter((a) => a.status === 'error').length
@@ -63,16 +68,21 @@ export default function BatchArticlesPage() {
       return
     }
 
-    const successfulArticles = generatedArticles.filter((item) => item.status === 'success').map((item) => item.article)
+    const selectedArticles = generatedArticles
+      .filter((item) => item.status === 'success' && item.selected)
+      .map((item) => ({
+        ...item.article,
+        selected: true
+      }))
 
-    if (successfulArticles.length === 0) {
-      toast.error('No valid articles to save')
+    if (selectedArticles.length === 0) {
+      toast.error('No articles selected to save')
       return
     }
 
     setIsSaving(true)
     try {
-      const saveResults = await saveBatchArticles(successfulArticles, publishImmediately)
+      const saveResults = await saveBatchArticles(selectedArticles, publishImmediately)
       setResults(saveResults)
 
       const successCount = saveResults.filter((r) => r.status === 'success').length
@@ -89,6 +99,34 @@ export default function BatchArticlesPage() {
     } finally {
       setIsSaving(false)
     }
+  }
+
+  const toggleSelectAll = () => {
+    const newSelectAll = !selectAll
+    setSelectAll(newSelectAll)
+
+    setGeneratedArticles(
+      generatedArticles.map((item) => ({
+        ...item,
+        selected: item.status === 'success' ? newSelectAll : false
+      }))
+    )
+  }
+
+  const toggleArticleSelection = (index: number) => {
+    const updatedArticles = [...generatedArticles]
+    updatedArticles[index] = {
+      ...updatedArticles[index],
+      selected: !updatedArticles[index].selected
+    }
+    setGeneratedArticles(updatedArticles)
+
+    // Update selectAll state based on whether all successful articles are selected
+    const allSuccessfulSelected = updatedArticles
+      .filter((item) => item.status === 'success')
+      .every((item) => item.selected)
+
+    setSelectAll(allSuccessfulSelected)
   }
 
   return (
@@ -130,9 +168,12 @@ export default function BatchArticlesPage() {
             </Button>
 
             {generatedArticles.length > 0 && (
-              <Button onClick={handleSave} disabled={isSaving}>
+              <Button
+                onClick={handleSave}
+                disabled={isSaving || !generatedArticles.some((a) => a.selected && a.status === 'success')}
+              >
                 {isSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {isSaving ? 'Saving...' : 'Save All Articles'}
+                {isSaving ? 'Saving...' : 'Save Selected Articles'}
               </Button>
             )}
           </div>
@@ -142,12 +183,31 @@ export default function BatchArticlesPage() {
       {generatedArticles.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle>Generated Articles</CardTitle>
+            <CardTitle className="flex items-center justify-between">
+              <span>Generated Articles</span>
+              {generatedArticles.some((a) => a.status === 'success') && (
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="selectAll" checked={selectAll} onCheckedChange={toggleSelectAll} />
+                  <Label htmlFor="selectAll" className="text-sm font-normal">
+                    Select All
+                  </Label>
+                </div>
+              )}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {generatedArticles.map((item, index) => (
                 <div key={index} className="flex items-center rounded border p-2">
+                  {item.status === 'success' && (
+                    <div className="mr-2">
+                      <Checkbox
+                        id={`article-${index}`}
+                        checked={item.selected}
+                        onCheckedChange={() => toggleArticleSelection(index)}
+                      />
+                    </div>
+                  )}
                   <div className="flex-1">
                     <span className="font-medium">{item.status === 'success' ? item.article.title : item.keyword}</span>
                   </div>
