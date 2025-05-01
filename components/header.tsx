@@ -15,6 +15,9 @@ export default async function Header({ className }: { className?: string }) {
         <Button variant="outline" asChild>
           <Link href="/about">About</Link>
         </Button>
+        <Button variant="outline" asChild>
+          <Link href="/blogs">Blogs</Link>
+        </Button>
       </section>
     </header>
   )
