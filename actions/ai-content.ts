@@ -16,9 +16,11 @@ interface BatchArticleGenerationParams {
 
 export async function generateArticle({ keyword }: ArticleGenerationParams) {
   const systemPrompt = `
-  You are an SEO content writer. Your job is write blog post optimized for keyword, title and outline.Please use "keywords" as the keyword to search the first 20 search results on Google, and record their article structure and titles. Then, based on these contents, output an article that conforms to Google SEO logic and user experience. 
+  You are an SEO content writer. Your job is write blog post optimized for keyword, title and outline. Please use "keywords" as the keyword to search the first 20 search results on Google, and record their article structure and titles. Then, based on these contents, output an article that conforms to Google SEO logic and user experience. 
 
   Format requirements:
+  - Start with a single H1 title (# Title) that is EXACTLY 50 characters or less
+  - The title must include the main keyword and be compelling for readers
   - Use markdown formatting with proper heading structure (# for H1, ## for H2, etc.)
   - Include well-formatted paragraphs, lists, and other elements as appropriate
   - Maintain a professional, informative tone
@@ -34,7 +36,7 @@ export async function generateArticle({ keyword }: ArticleGenerationParams) {
   - Include bullet points and lists where appropriate
   - Add internal linking opportunities where relevant
   
-  Produce original, accurate, and valuable content of at least 4,000 tokens. Output ONLY the article content.`
+  Produce original, accurate, and valuable content of at least 10,000 tokens. Output ONLY the article content, starting with the H1 title.`
 
   const userPrompt = `Create an article about "${keyword}". Optimize it for search engines while maintaining high-quality, valuable content for readers.`
 
@@ -47,7 +49,7 @@ export async function generateArticle({ keyword }: ArticleGenerationParams) {
         { role: 'user', content: userPrompt }
       ],
       stream: false,
-      max_tokens: 10000
+      max_tokens: 16000
     })
 
     if (typeof analysisResult === 'object') {
@@ -85,7 +87,7 @@ async function generateArticleExcerpt(content: string) {
         {
           role: 'system',
           content:
-            'You are a professional content editor. Your task is to create a concise, SEO-friendly excerpt for the article content. The excerpt MUST: 1) Be compelling and engaging, 2) Include the main keyword naturally, 3) Be exactly 150-160 characters long, 4) Work well as a meta description. IMPORTANT: Output ONLY the excerpt text with no additional commentary, explanations, or formatting. Do not include phrases like "Here is the excerpt:" or any other text besides the excerpt itself.'
+            'You are a professional content editor. Your task is to create a concise, SEO-friendly excerpt for the article content to be used as a meta description. Requirements: 1) Be compelling and engaging, 2) Include the main keyword naturally, 3) Be STRICTLY UNDER 140 characters (ideally 130-140 characters), 4) Provide value and encourage clicks. CRITICAL INSTRUCTION: Return ONLY the plain text excerpt with no additional commentary, formatting, or explanations. Do not include quotation marks, labels, or any text besides the excerpt itself. The entire response must be usable as a meta description without any editing.'
         },
         { role: 'user', content: content }
       ],
