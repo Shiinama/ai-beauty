@@ -14,6 +14,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: SiteInfo.metaTitle,
   description: SiteInfo.metaDescription,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   icons: {
     icon: '/favicon.ico'
   },
