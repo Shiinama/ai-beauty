@@ -1,16 +1,10 @@
 'use server'
 
 import { eq } from 'drizzle-orm'
-import OpenAI from 'openai'
 
+import { createAI } from '@/lib/ai'
 import { createDb } from '@/lib/db'
 import { posts } from '@/lib/db/schema'
-
-// 初始化 OpenAI 客户端
-const openai = new OpenAI({
-  baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY
-})
 
 interface ArticleGenerationParams {
   keyword: string
@@ -20,12 +14,7 @@ interface BatchArticleGenerationParams {
   keywords: string[]
 }
 
-export async function generateArticle({ keyword }: ArticleGenerationParams): Promise<{
-  title: string
-  slug: string
-  content: string
-  excerpt: string
-}> {
+export async function generateArticle({ keyword }: ArticleGenerationParams) {
   const systemPrompt = `
   You are an SEO content writer. Your job is write blog post optimized for keyword, title and outline.Please use "keywords" as the keyword to search the first 20 search results on Google, and record their article structure and titles. Then, based on these contents, output an article that conforms to Google SEO logic and user experience. 
 
@@ -50,36 +39,36 @@ export async function generateArticle({ keyword }: ArticleGenerationParams): Pro
   const userPrompt = `Create an article about "${keyword}". Optimize it for search engines while maintaining high-quality, valuable content for readers.`
 
   try {
-    // Call OpenAI API to generate content
-    const response = await openai.chat.completions.create({
-      model: 'chatgpt-4o-latest', // or use other available models
+    const cloudflareAI = createAI()
+
+    const analysisResult = await cloudflareAI.run('@cf/meta/llama-4-scout-17b-16e-instruct', {
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt }
       ],
-      temperature: 0.7,
-      max_tokens: 6000
+      stream: false,
+      max_tokens: 10000
     })
 
-    // Extract generated content
-    const content = response.choices[0]?.message?.content || ''
+    if (typeof analysisResult === 'object') {
+      const content = analysisResult.response
+      let extractedTitle = ''
+      if (!extractedTitle) {
+        // Try to extract title from the first line of content (assuming it's in # format)
+        const titleMatch = content.match(/^#\s+(.+)$/m)
+        extractedTitle = titleMatch ? titleMatch[1].trim() : 'Untitled Article'
+      }
 
-    let extractedTitle = ''
-    if (!extractedTitle) {
-      // Try to extract title from the first line of content (assuming it's in # format)
-      const titleMatch = content.match(/^#\s+(.+)$/m)
-      extractedTitle = titleMatch ? titleMatch[1].trim() : 'Untitled Article'
-    }
+      const finalSlug = createSlug(extractedTitle)
 
-    const finalSlug = createSlug(extractedTitle)
+      const excerpt = await generateArticleExcerpt(content)
 
-    const excerpt = await generateArticleExcerpt(content)
-
-    return {
-      title: extractedTitle,
-      slug: finalSlug,
-      content,
-      excerpt
+      return {
+        title: extractedTitle,
+        slug: finalSlug,
+        content,
+        excerpt
+      }
     }
   } catch (error) {
     console.error('Error generating article:', error)
@@ -87,23 +76,26 @@ export async function generateArticle({ keyword }: ArticleGenerationParams): Pro
   }
 }
 
-async function generateArticleExcerpt(content: string): Promise<string> {
+async function generateArticleExcerpt(content: string) {
   try {
-    const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo', // Use a smaller model for generating excerpts
+    const cloudflareAI = createAI()
+
+    const analysisResult = await cloudflareAI.run('@cf/meta/llama-4-scout-17b-16e-instruct', {
       messages: [
         {
           role: 'system',
           content:
-            'You are a professional content editor. Create a concise, SEO-friendly excerpt for the following article content. The excerpt should be compelling, include the main keyword naturally, and be no more than 150-160 characters to work well as a meta description.'
+            'You are a professional content editor. Your task is to create a concise, SEO-friendly excerpt for the article content. The excerpt MUST: 1) Be compelling and engaging, 2) Include the main keyword naturally, 3) Be exactly 150-160 characters long, 4) Work well as a meta description. IMPORTANT: Output ONLY the excerpt text with no additional commentary, explanations, or formatting. Do not include phrases like "Here is the excerpt:" or any other text besides the excerpt itself.'
         },
         { role: 'user', content: content }
       ],
-      temperature: 0.5,
-      max_tokens: 150
+      stream: false,
+      max_tokens: 10000
     })
 
-    return response.choices[0]?.message?.content?.trim() || ''
+    if (typeof analysisResult === 'object') {
+      return analysisResult.response
+    }
   } catch (error) {
     console.error('Error generating excerpt:', error)
     return content.substring(0, 150) + '...' // Fallback to simple truncation
@@ -221,7 +213,6 @@ export async function generateBatchArticles(params: BatchArticleGenerationParams
       }
     })
 
-    // Wait for all articles in this batch to complete
     const batchResults = await Promise.all(batchPromises)
     results.push(...batchResults)
   }
@@ -235,22 +226,19 @@ export async function saveBatchArticles(
     slug: string
     content: string
     excerpt: string
-    selected?: boolean // New optional property to indicate if article is selected for saving
+    selected?: boolean
   }>,
   publishImmediately = true
 ) {
   const database = createDb()
   const results = []
 
-  // Filter articles if selection is provided
-  const articlesToSave = articles.filter((article) => article.selected !== false) // Save all unless explicitly not selected
+  const articlesToSave = articles.filter((article) => article.selected !== false)
 
-  // Process articles in batches for better efficiency
   const batchSize = 10
   for (let i = 0; i < articlesToSave.length; i += batchSize) {
     const batch = articlesToSave.slice(i, i + batchSize)
 
-    // Create an array of promises for concurrent database operations
     const savePromises = batch.map(async (article) => {
       try {
         // Prepare article data
