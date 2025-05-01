@@ -196,27 +196,37 @@ export async function deleteArticle(slug: string) {
 
 export async function generateBatchArticles(params: BatchArticleGenerationParams) {
   const { keywords } = params
+  const concurrencyLimit = 10
+  const results = []
 
-  // Generate articles one by one
-  const articles = []
-  for (const keyword of keywords) {
-    try {
-      const article = await generateArticle({ keyword })
-      articles.push({
-        keyword,
-        article,
-        status: 'success'
-      })
-    } catch (error) {
-      articles.push({
-        keyword,
-        error: error instanceof Error ? error.message : 'Unknown error',
-        status: 'error'
-      })
-    }
+  // Process keywords in batches of concurrencyLimit
+  for (let i = 0; i < keywords.length; i += concurrencyLimit) {
+    const batch = keywords.slice(i, i + concurrencyLimit)
+
+    // Generate articles in this batch concurrently
+    const batchPromises = batch.map(async (keyword) => {
+      try {
+        const article = await generateArticle({ keyword })
+        return {
+          keyword,
+          article,
+          status: 'success'
+        }
+      } catch (error) {
+        return {
+          keyword,
+          error: error instanceof Error ? error.message : 'Unknown error',
+          status: 'error'
+        }
+      }
+    })
+
+    // Wait for all articles in this batch to complete
+    const batchResults = await Promise.all(batchPromises)
+    results.push(...batchResults)
   }
 
-  return articles
+  return results
 }
 
 export async function saveBatchArticles(
