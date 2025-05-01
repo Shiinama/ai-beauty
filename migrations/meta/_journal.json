@@ -15,6 +15,13 @@
       "when": 1746024508916,
       "tag": "0001_fantastic_paibok",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1746080416184,
+      "tag": "0002_quiet_starfox",
+      "breakpoints": true
     }
   ]
 }
