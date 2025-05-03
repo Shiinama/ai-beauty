@@ -8,7 +8,7 @@ import { LimitReachedDialog } from '@/components/limit-reached-dialog'
 import LoginForm from '@/components/login/login-form'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 
-const TOTAL_TIMES = 5
+const TOTAL_TIMES = 10
 
 interface UserContextType {
   // Authentication

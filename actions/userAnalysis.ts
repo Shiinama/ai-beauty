@@ -64,5 +64,5 @@ export async function getUserAnalysisUsage(userId: string) {
 
 export async function hasRemainingFreeAnalysis(userId: string) {
   const usageCount = await getUserAnalysisUsage(userId)
-  return usageCount < 5 // Return true if user has used less than 5 analyses
+  return usageCount < 10 // Return true if user has used less than 5 analyses
 }
