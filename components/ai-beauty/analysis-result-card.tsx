@@ -1,5 +1,8 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Sparkles, ArrowRight, Camera } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -11,11 +14,16 @@ interface AnalysisResultCardProps {
 }
 
 export const AnalysisResultCard = ({ portraitScore }: AnalysisResultCardProps) => {
-  const renderScoreBar = (score: number, label: string) => (
+  const t = useTranslations('aiBeauty.analysisResult')
+
+  const renderScoreBar = (score: number, translation: string) => (
     <div className="mb-4">
       <div className="mb-1 flex justify-between">
-        <span className="text-sm font-medium text-gray-300">{label}</span>
-        <span className="text-sm font-medium text-gray-300">{score}/10</span>
+        <span className="text-sm font-medium text-gray-300">{translation}</span>
+        <span className="text-sm font-medium text-gray-300">
+          {score}
+          {'/10'}
+        </span>
       </div>
       <div className="h-2 w-full overflow-hidden rounded-full bg-gray-800">
         <motion.div
@@ -33,10 +41,10 @@ export const AnalysisResultCard = ({ portraitScore }: AnalysisResultCardProps) =
     <Card className="overflow-hidden border-0 bg-gray-900/50 backdrop-blur-sm">
       <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-white">Attractiveness Score</h2>
+          <h2 className="text-2xl font-bold text-white">{t('title')}</h2>
           <div className="flex items-center rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
             <span className="mr-1 text-3xl font-bold text-white">{portraitScore.overall_score}</span>
-            <span className="text-sm text-white/80">/10</span>
+            <span className="text-sm text-white/80">{`/10`}</span>
           </div>
         </div>
       </div>
@@ -47,35 +55,35 @@ export const AnalysisResultCard = ({ portraitScore }: AnalysisResultCardProps) =
         </div>
 
         <div className="mb-6">
-          <h3 className="mb-3 font-medium text-purple-400">Facial Features</h3>
-          {renderScoreBar(portraitScore.facial_features.eyes, 'Eyes')}
-          {renderScoreBar(portraitScore.facial_features.nose, 'Nose')}
-          {renderScoreBar(portraitScore.facial_features.mouth, 'Mouth')}
-          {renderScoreBar(portraitScore.facial_features.facial_structure, 'Facial Structure')}
+          <h3 className="mb-3 font-medium text-purple-400">{t('sections.facialFeatures')}</h3>
+          {renderScoreBar(portraitScore.facial_features.eyes, t('categories.eyes'))}
+          {renderScoreBar(portraitScore.facial_features.nose, t('categories.nose'))}
+          {renderScoreBar(portraitScore.facial_features.mouth, t('categories.mouth'))}
+          {renderScoreBar(portraitScore.facial_features.facial_structure, 'categories.facialStructure')}
         </div>
 
         <Separator className="my-6 bg-gray-800" />
 
         <div className="mb-6">
-          <h3 className="mb-3 font-medium text-blue-400">Skin Analysis</h3>
-          {renderScoreBar(portraitScore.technical_aspects.clarity, 'Skin Clarity')}
-          {renderScoreBar(portraitScore.technical_aspects.color_balance, 'Skin Tone')}
-          {renderScoreBar(portraitScore.technical_aspects.lighting, 'Complexion')}
-          {renderScoreBar(portraitScore.technical_aspects.composition, 'Overall Balance')}
+          <h3 className="mb-3 font-medium text-blue-400">{t('sections.skinAnalysis')}</h3>
+          {renderScoreBar(portraitScore.technical_aspects.clarity, t('categories.skinClarity'))}
+          {renderScoreBar(portraitScore.technical_aspects.color_balance, t('categories.skinTone'))}
+          {renderScoreBar(portraitScore.technical_aspects.lighting, t('categories.complexion'))}
+          {renderScoreBar(portraitScore.technical_aspects.composition, t('categories.overallBalance'))}
         </div>
 
         <Separator className="my-6 bg-gray-800" />
 
         <div className="mb-6">
-          <h3 className="mb-3 font-medium text-pink-400">Expression & Presence</h3>
-          {renderScoreBar(portraitScore.expression, 'Attractiveness Impact')}
+          <h3 className="mb-3 font-medium text-pink-400">{t('sections.expressionPresence')}</h3>
+          {renderScoreBar(portraitScore.expression, t('categories.attractivenessImpact'))}
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-lg bg-green-900/20 p-4">
             <h4 className="mb-3 flex items-center font-medium text-green-400">
               <Sparkles className="mr-2 h-4 w-4" />
-              Your Beauty Strengths
+              {t('sections.beautyStrengths')}
             </h4>
             <ul className="space-y-2">
               {portraitScore.strengths.map((strength, index) => (
@@ -90,7 +98,7 @@ export const AnalysisResultCard = ({ portraitScore }: AnalysisResultCardProps) =
           <div className="rounded-lg bg-amber-900/20 p-4">
             <h4 className="mb-3 flex items-center font-medium text-amber-400">
               <Camera className="mr-2 h-4 w-4" />
-              Enhancement Tips
+              {t('sections.enhancementTips')}
             </h4>
             <ul className="space-y-2">
               {portraitScore.areas_for_improvement.map((area, index) => (

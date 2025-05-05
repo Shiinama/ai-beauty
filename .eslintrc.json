@@ -4,6 +4,7 @@
   "ignorePatterns": ["scripts/**/*"],
   "rules": {
     "react/no-unescaped-entities": "off",
+    "react/jsx-no-literals": "error",
     "no-console": ["error", { "allow": ["error", "warn"] }],
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -25,6 +26,23 @@
     "unused-imports/no-unused-vars": [
       "warn",
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
-    ]
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+          "name": "next/link",
+          "message": "Please import from `@/i18n/navigation` instead."
+      },
+      {
+          "name": "next/navigation",
+          "importNames": [
+              "redirect",
+              "permanentRedirect",
+              "useRouter",
+              "usePathname"
+          ],
+          "message": "Please import from `@/i18n/navigation` instead."
+      }
+  ]
   }
 }

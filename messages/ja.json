@@ -1,0 +1,353 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "freeUsage": "{used}/{total} 無料クレジット"
+  },
+  "header": {
+    "about": "について"
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "クイックリンク",
+      "craveUAI": "CraveU AI",
+      "craveUAIPr": "CraveU AIニュース",
+      "craveUAICreatorBenefit": "CraveU クリエーターベネフィット",
+      "blogs": "ブログ"
+    },
+    "copyright": "著作権所有"
+  },
+  "siteInfo": {
+    "brandName": "AI Beauty Analyzer",
+    "meta": {
+      "title": "AI Beauty Analyzer - AI で您的ビューティースコアを分析",
+      "description": "写真をアップロードし、AI パowered美容分析を受けてください。美しいスコアを発見し、顔の特徴へのパーソナライズされたフィードバックを受けてください。"
+    }
+  },
+  "login": {
+    "signout": "ログアウト",
+    "form": {
+      "continueWithGoogle": "Google で続ける",
+      "errorMessage": "{provider} でのログインに失敗しました"
+    },
+    "loginText": "ログイン"
+  },
+  "userProvider": {
+    "errorFetchingUsage": "使用状況の取得中にエラーが発生しました:",
+    "errorUseUserHook": "useUser を UserProvider 内で使用する必要があります",
+    "loginModal": {
+      "title": "AI Beauty Analyzer へようこそ",
+      "description": "ログインして、旅を続けてください"
+    }
+  },
+  "blog": {
+    "postNotFound": "投稿が見つかりません",
+    "postNotFoundDescription": "探しているブログ投稿が見つかりませんでした。",
+    "publishedAt": "{date} に投稿されました"
+  },
+  "blogs": {
+    "pageTitle": "ブログ記事",
+    "metaTitle": "インサイト & アーティクル | {brandName} ブログ",
+    "metaDescription": "美容分析、AI 技術、顔貌美学に関する最新の記事を探索してください。AI パワード美容評価の世界での専門家の洞察、ヒント、トレンドを発見してください。",
+    "noArticles": "記事がありません",
+    "publishedAt": "{date} に投稿"
+  },
+  "about": {
+    "title": "私たちについて",
+    "subtitle": "{brandName} について学びましょう：私たちのミッション、チーム、そして物語",
+    "metaDescription": "私たちのチームとAI Beauty Analyzerの背景にあるストーリーを知る。Cozyai LLCは、CraveU AIのクリエーターであり、業界をリードするモデル効果と画像生成機能を備えたNSFW AIチャットに特化した製品です。",
+    "aiBeautyAnalysis": "AI 美容分析",
+    "mission": {
+      "title": "私たちのミッション",
+      "description": "AI 美容分析器では、AI 驅動の美容分析を楽しみながら探求する方法を提供しています。CraveU.ai を作成したチームによって素早く作成されたこのツールは、現代の AI の能力を楽しいコンテキストで示しています。",
+      "poweredBy": "高度進化的AIテクノロジーで実現"
+    },
+    "team": {
+      "title": "私たちのチーム",
+      "company": "Cozyai LLC",
+      "mainProduct": "CraveU.ai",
+      "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
+      "expertise": "弊社はNSFW AIロールプレイングに特化しており、業界最先端のモデル効果と画像生成能力を誇っています。",
+      "whyChoose": "私たちの製品を選ぶ理由",
+      "weAre": "<company>Cozyai LLC</company>です。私たちは<product>CraveU.ai</product>のチームです。"
+    },
+    "story": {
+      "title": "私たちのストーリー",
+      "description": "このプロジェクトはわずか20分で作成されました。誰でも楽しめる面白いおもちゃとして設計されているため、あまり厳しく評価しないでください！"
+    },
+    "tagline": "LLCからのエンターテインメントプロジェクト - AIインタラクションの境界を拡大",
+    "acknowledgement": "LLCに敬意を表します",
+    "features": {
+      "conversations": {
+        "title": "知性会話",
+        "description": "高度なAIモデルと自然で流暢な会話を行え、文脈を理解し、個性豊かな応答をします。"
+      },
+      "imageGeneration": {
+        "title": "画像生成",
+        "description": "最先端のAI画像生成技術を活用して、美しくカスタマイズされた画像を作成します。"
+      },
+      "customization": {
+        "title": "ディープカスタマイズ",
+        "description": "広範なパーソナライゼーションオプションで、体験のあらゆる面をカスタマイズします。"
+      },
+      "emotionalIntelligence": {
+        "title": "情緒知性",
+        "description": "私たちのAIは感情のヒントを理解し、反応し、より意味のある相互作用を作り出します。"
+      },
+      "privacy": {
+        "title": "プライバシー & セキュリティ",
+        "description": "あなたのデータと会話は、エンタープライズグレードのセキュリティとプライバシー制御で保護されています。"
+      }
+    }
+  },
+  "admin": {
+    "batch": {
+      "title": "記事を一括作成",
+      "backToArticles": "記事に戻る",
+      "keywordsCard": {
+        "title": "キーワードを入力",
+        "label": "キーワード (1行につき1つ)",
+        "placeholder": "キーワードを入力してください、1行につき1つ"
+      },
+      "publishImmediately": "即時公開",
+      "buttons": {
+        "generating": "生成中...",
+        "generateArticles": "記事を生成",
+        "saving": "保存中...",
+        "saveSelected": "選択した記事を保存"
+      },
+      "generatedArticles": {
+        "title": "生成された記事",
+        "selectAll": "すべて選択"
+      },
+      "saveResults": {
+        "title": "保存結果"
+      },
+      "status": {
+        "generated": "✓ 生成されました",
+        "saved": "✓ 保存されました",
+        "failed": "✗ 失敗しました"
+      },
+      "errors": {
+        "emptyKeywords": "少なくとも1つのキーワードを入力してください",
+        "noValidKeywords": "少なくとも1つの有効なキーワードを入力してください",
+        "generateFailed": "記事の生成に失敗しました。もう一度お試しください。",
+        "noArticlesToSave": "保存する記事がありません",
+        "noSelectedArticles": "保存する記事が選択されていません",
+        "saveFailed": "記事の保存に失敗しました。もう一度お試しください。"
+      },
+      "success": {
+        "generated": "{successCount} 篇の記事を正常に生成しました{errorMessage}",
+        "saved": "{successCount}の記事が{publishStatus}{errorMessage}",
+        "withErrors": ", {errorCount}件失敗"
+      },
+      "publishStatus": {
+        "published": "公開",
+        "draft": "下書きとして保存"
+      }
+    },
+    "new": {
+      "title": "新記事を作成",
+      "keywordSection": {
+        "label": "キーワード",
+        "placeholder": "記事のキーワードを入力"
+      },
+      "articleForm": {
+        "titleLabel": "タイトル",
+        "excerptLabel": "抜粋",
+        "contentLabel": "本文",
+        "publishImmediately": " immediate publish"
+      },
+      "buttons": {
+        "generating": "Generating...",
+        "generateArticle": "Generate Article",
+        "saving": "Saving...",
+        "saveArticle": "Save Article",
+        "cancel": "キャンセル"
+      },
+      "errors": {
+        "emptyKeyword": "キーワードを入力してください",
+        "generateFailed": "記事の生成に失敗しました、もう一度お試しください",
+        "saveFailed": "記事の保存に失敗しました、もう一度お試しください"
+      },
+      "success": {
+        "generated": "記事が正常に生成されました",
+        "published": "記事が公開されました",
+        "savedAsDraft": "記事が下書きとして保存されました"
+      }
+    },
+    "edit": {
+      "title": "記事編集",
+      "loading": "読み込み中...",
+      "articleForm": {
+        "titleLabel": "タイトル",
+        "excerptLabel": "抜粋",
+        "contentLabel": "内容",
+        "publishArticle": "記事を公開する"
+      },
+      "deleteDialog": {
+        "title": "削除を確認",
+        "description": "この記事を削除してもよろしいですか？このアクションは取り消すことができません。"
+      },
+      "buttons": {
+        "saving": "保存中...",
+        "saveArticle": "記事を保存",
+        "deleting": "削除中...",
+        "deleteArticle": "記事を削除",
+        "delete": "削除",
+        "cancel": "キャンセル"
+      },
+      "errors": {
+        "articleNotFound": "記事が見つかりませんでした",
+        "fetchFailed": "記事を取得できませんでした",
+        "updateFailed": "記事の更新に失敗しました",
+        "deleteFailed": "記事の削除に失敗しました"
+      },
+      "success": {
+        "updated": "記事が更新されました",
+        "deleted": "記事が削除されました"
+      }
+    },
+    "list": {
+      "title": "記事管理",
+      "buttons": {
+        "createNew": "新記事を作成",
+        "batchCreate": "一括作成"
+      },
+      "table": {
+        "headers": {
+          "title": "タイトル",
+          "createdDate": "作成日",
+          "status": "状態",
+          "actions": "アクション"
+        },
+        "noArticles": "記事が見つかりませんでした"
+      },
+      "status": {
+        "published": "公開済",
+        "draft": "下書き"
+      },
+      "actions": {
+        "edit": "編集",
+        "view": "閲覧"
+      }
+    }
+  },
+  "limitReachedDialog": {
+    "title": "無料分析の制限に達しました",
+    "description": "CraveU AIの刺激的なロールプレイング機能を試して、より没入感のある体験を！",
+    "maybeLaterButton": "後で",
+    "visitButton": "CraveAI を訪問"
+  },
+  "aiBeauty": {
+    "howItWorks": {
+      "title": "私たちの美しさスコアテストはどのように機能しますか",
+      "steps": {
+        "1": {
+          "title": "セルフィーをアップロード",
+          "description": "明るいセルフィーを撮影したり、既存の写真をアップロードしたりします。私たちのAIは、正面を向いていて、明るく顔全体が映っている写真で最も効果を発揮します。"
+        },
+        "2": {
+          "title": "AI顔分析",
+          "description": "高度なAIが、顔の特徴、皮膚の状態、対称性、および比率を分析します。Prettyscaleと同じ技術を使用していますが、より高い精度です。"
+        },
+        "3": {
+          "title": "ビューティースコアを取得",
+          "description": "1-10のスケールでの魅力スコアを受取り、個々の特徴の詳細な分解とパーソナライズされた改善提案をします。"
+        }
+      }
+    },
+    "promotion": {
+      "title": "今日、あなた本来の美しさのスコアを発見しよう",
+      "description": "オンラインで最も高度なAIの魅力テストを体験してください——Prettyscaleよりも正確です！顔全体のスコア、詳細な肌分析、そして最先端のAI顔分析技術で得られた個人向けの美容インサイトを手に入れましょう。",
+      "tags": {
+        "beautyScoreTest": "美しさスコアテスト",
+        "aiAttractivenessTest": "AI魅力テスト",
+        "faceAnalysis": "顔分析",
+        "onlineSkinAnalysis": "オンライン肌分析",
+        "faceScore": "フェイススコア"
+      }
+    },
+    "hero": {
+      "title": "AI 美容＆魅力テスト",
+      "description": "高度なAI顔分析機能で、即座にフェイススコアを取得。美しさスコア、魅力評価、そしてパーソナライズされた肌分析を、数秒で発見します。"
+    },
+    "uploadSection": {
+      "title": "顔分析テスト",
+      "description": "セルフィーをアップロードして、即時魅力スコアと詳細な顔の特徴分析を受けてください。Prettyscaleに似ていますが、AIテクノロジーが向上しています。",
+      "uploadPrompt": "セルフィーをアップロード",
+      "fileTypes": "JPG、PNG、またはGIF（最大3MB）",
+      "portraitPreviewAlt": "肖像プレビュー",
+      "changeButton": "変更",
+      "analyzingText": "顔分析中...",
+      "analyzeButton": "あなたの魅力スコアを取得",
+      "features": {
+        "title": "顔全体の分析",
+        "facialFeatures": "顔の特徴スコア（目、鼻、口、構造）",
+        "attractivenessRating": "全体的な魅力レーティング（1-10点）",
+        "skinAnalysis": "肌分析と肌 Tone 評価",
+        "comparison": "美の基準との比較とパーソナライズされたヒント"
+      }
+    },
+    "faq": {
+      "title": "よくある質問",
+      "items": {
+        "accuracy": {
+          "question": "このAIの美しさテストはどのくらい正確ですか？",
+          "answer": "当社のAIビューティーアナライザーは、顔の対称性、比率、普遍的に美しさとされる特徴に基づいて、非常に正確な評価を提供します。美は主観ですが、当社のアルゴリズムは数千人の顔にトレーニングされており、文化を越えた一般的な美の基準を識別します。"
+        },
+        "comparison": {
+          "question": "これはPrettyscaleに似ていますか？",
+          "answer": "はい、私たちの顔分析ツールはPrettyscaleに似ていますが、より高度なAIテクノロジーを使用して、より高い精度を実現しています。私たちは、顔の特徴と皮膚分析の詳細な分解、そしてパーソナライズされた提案を提供しています。"
+        },
+        "calculation": {
+          "question": "私の美しさスコアはどのように計算されますか？",
+          "answer": "あなたの顔のスコアは、顔の特徴（目、鼻、口、構造）、肌の質、対称性、および比率を分析することによって計算されます。AIはこれらの測定値を美しさの基準と比較し、1-10のスケールで全体的な魅力スコアを生成します。"
+        },
+        "privacy": {
+          "question": "私の写真は保存または共有されますか？",
+          "answer": "お客様のプライバシーは私たちにとって最優先事項です。アップロードされた写真は分析のみに使用され、永続的に保存されたり、第三者と共有されることはありません。すべての処理は安全なサーバー上で行われ、分析後に画像は削除されます。"
+        },
+        "skinAnalysis": {
+          "question": "肌分析にも利用できますか？",
+          "answer": "はい！当社のAIビューティーアナライザーは、評価の一部として包括的な肌分析を含んでいます。肌の透明感、トーン、テクスチャー、そして全体的な肌色を評価し、特定のスキンケア改善の提案を行います。"
+        },
+        "improvement": {
+          "question": "私の魅力スコアをどのように向上させればよいですか？",
+          "answer": "分析後、個人の結果に基づいて個別の推薦を提供します。これらには、より良い写真の角度、照明、スキンケアの提案、または強調すべき特徴が含まれます。私たちのツールは楽しいもので情報提供を目的としたものです！"
+        }
+      }
+    },
+    "emptyResult": {
+      "title": "顔のスコア分析",
+      "description": "セルフィーをアップロードして、即座に魅力スコアと詳細な顔分析を得てください",
+      "buttonText": "美顔テストを開始"
+    },
+    "errorResult": {
+      "title": "解析エラー",
+      "tryAgainButton": "再試行"
+    },
+    "analysisResult": {
+      "title": "ATTRACTIVENESS SCORE",
+      "sections": {
+        "facialFeatures": "顔の特徴",
+        "skinAnalysis": "肌の分析",
+        "expressionPresence": "表情＆存在感",
+        "beautyStrengths": "あなたの美の強み",
+        "enhancementTips": "向上トレンド"
+      },
+      "categories": {
+        "eyes": "目",
+        "nose": "鼻",
+        "mouth": "口",
+        "facialStructure": "顔の構造",
+        "skinClarity": "スキン clarity",
+        "skinTone": "スキン tone",
+        "complexion": " complexion",
+        "overallBalance": "全体バランス",
+        "attractivenessImpact": "引きつけの影響"
+      }
+    }
+  }
+}

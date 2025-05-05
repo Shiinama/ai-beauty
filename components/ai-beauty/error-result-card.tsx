@@ -1,3 +1,7 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 
@@ -7,11 +11,13 @@ interface ErrorResultCardProps {
 }
 
 export const ErrorResultCard = ({ error, onRetry }: ErrorResultCardProps) => {
+  const t = useTranslations('aiBeauty.errorResult')
+
   return (
     <Card className="overflow-hidden border-0 bg-gray-900/50 backdrop-blur-sm">
       <div className="bg-red-900/50 p-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-white">Analysis Error</h2>
+          <h2 className="text-2xl font-bold text-white">{t('title')}</h2>
         </div>
       </div>
 
@@ -24,7 +30,7 @@ export const ErrorResultCard = ({ error, onRetry }: ErrorResultCardProps) => {
           onClick={onRetry}
           className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700"
         >
-          Try Again
+          {t('tryAgainButton')}
         </Button>
       </CardContent>
     </Card>

@@ -2,6 +2,7 @@
 
 import { Loader2 } from 'lucide-react'
 import { signIn } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -11,6 +12,7 @@ interface LoginFormProps {
 }
 
 export default function LoginForm({ onSuccess }: LoginFormProps) {
+  const t = useTranslations('login.form')
   const [isLoading, setIsLoading] = useState({
     google: false,
     github: false,
@@ -28,7 +30,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
         onSuccess()
       }
     } catch (error) {
-      console.error(`Error signing in with ${provider}:`, error)
+      console.error(`${t('errorMessage', { provider })}:`, error)
     } finally {
       setIsLoading((prev) => ({ ...prev, [provider]: false }))
     }
@@ -59,7 +61,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
             />
           </svg>
         )}
-        Continue with Google
+        {t('continueWithGoogle')}
       </Button>
     </div>
   )

@@ -1,0 +1,353 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "freeUsage": "{used}/{total} Créditos Gratis"
+  },
+  "header": {
+    "about": "Sobre"
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "Enlaces rápidos",
+      "craveUAI": "CraveU IA",
+      "craveUAIPr": "CraveU Noticias de IA",
+      "craveUAICreatorBenefit": "CraveU Beneficios para Creadores",
+      "blogs": "Blogs"
+    },
+    "copyright": "Todos los derechos reservados"
+  },
+  "siteInfo": {
+    "brandName": "AI Beauty Analyzer",
+    "meta": {
+      "title": "AI Beauty Analyzer - Analice su puntuación de belleza con AI",
+      "description": "Cargue su foto y obtenga un análisis de belleza impulsado por IA. Descubra su puntuación de belleza y obtenga comentarios personalizados sobre sus rasgos faciales."
+    }
+  },
+  "login": {
+    "signout": "Cerrar sesión",
+    "form": {
+      "continueWithGoogle": "Continuar con Google",
+      "errorMessage": "Error al iniciar sesión con {provider}"
+    },
+    "loginText": "Iniciar sesión"
+  },
+  "userProvider": {
+    "errorFetchingUsage": "Error al obtener el recuento de uso:",
+    "errorUseUserHook": "useUser debe usarse dentro de un UserProvider",
+    "loginModal": {
+      "title": "Bienvenido al Analizador de Belleza AI",
+      "description": "Inicia sesión para continuar tu viaje"
+    }
+  },
+  "blog": {
+    "postNotFound": "Publicación no encontrada",
+    "postNotFoundDescription": "La publicación de blog que busca no pudo ser encontrada.",
+    "publishedAt": "Publicado el {date}"
+  },
+  "blogs": {
+    "pageTitle": "Publicaciones del blog",
+    "metaTitle": "Insights & Artículos | Blog de {brandName}",
+    "metaDescription": "Explora nuestros últimos artículos sobre el análisis de belleza, la tecnología AI y la estética facial. Descubre las perspectivas de los expertos, consejos y tendencias en el mundo de la evaluación de belleza impulsada por IA.",
+    "noArticles": "No hay artículos disponibles",
+    "publishedAt": "Publicado el {date}"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Aprende sobre nuestra misión, equipo y la historia detrás de {brandName}",
+    "metaDescription": "Aprende sobre nuestro equipo y la historia detrás de AI Beauty Analyzer. Cozyai LLC es el creador de CraveU AI, un producto enfocado en chat NSFW AI con efectos de modelo líderes en la industria y capacidades de generación de imágenes.",
+    "aiBeautyAnalysis": "Análisis de Belleza AI",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "En AI Beauty Analyzer, ofrecemos una forma divertida e innovadora de explorar el análisis de belleza impulsado por IA. Creado rápidamente por el equipo detrás de CraveU.ai, esta herramienta demuestra las capacidades de la IA moderna en un contexto divertido.",
+      "poweredBy": "Impulsado por tecnología AI avanzada"
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "company": "Cozyai LLC",
+      "mainProduct": "CraveU.ai",
+      "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
+      "expertise": "Nos especializamos en NSFW AI Role Play con capacidades de efectos de modelo y generación de imágenes líderes en la industria.",
+      "whyChoose": "¿Por qué elegir nuestros productos?",
+      "weAre": "Somos <company>Cozyai LLC</company>, el equipo detrás de <product>CraveU.ai</product>."
+    },
+    "story": {
+      "title": "Nuestra historia",
+      "description": "Este proyecto fue creado en solo 20 minutos. Está diseñado para ser un juguete divertido para que todos disfruten, así que no sean demasiado duros con él."
+    },
+    "tagline": "Un proyecto divertido de LLC - Ampliar los límites de la interacción con IA",
+    "acknowledgement": "Homenaje a LLC",
+    "features": {
+      "conversations": {
+        "title": "Conversaciones Inteligentes",
+        "description": "Participa en conversaciones naturales y fluidas con nuestros avanzados modelos de IA que comprenden el contexto y responden con personalidad."
+      },
+      "imageGeneration": {
+        "title": "Generación de Imágenes",
+        "description": "Crea imágenes asombrosas y personalizadas con nuestra tecnología de generación de imágenes AI de última generación."
+      },
+      "customization": {
+        "title": "Personalización Profunda",
+        "description": "Personaliza todos los aspectos de tu experiencia con opciones de personalización extensas."
+      },
+      "emotionalIntelligence": {
+        "title": "Inteligencia emocional",
+        "description": "Nuestra IA entiende y responde a las pistas emocionales, creando interacciones más significativas."
+      },
+      "privacy": {
+        "title": "Privacidad y Seguridad",
+        "description": "Sus datos y conversaciones están protegidos con controles de seguridad y privacidad de grado empresarial."
+      }
+    }
+  },
+  "admin": {
+    "batch": {
+      "title": "Crear Artículos por Lote",
+      "backToArticles": "Volver a Artículos",
+      "keywordsCard": {
+        "title": "Introduce Palabras Clave",
+        "label": "Palabras clave (una por línea)",
+        "placeholder": "Introduce palabras clave, una por línea"
+      },
+      "publishImmediately": "Publicar inmediatamente",
+      "buttons": {
+        "generating": "Generando...",
+        "generateArticles": "Generar Artículos",
+        "saving": "Guardando...",
+        "saveSelected": "Guardar artículos seleccionados"
+      },
+      "generatedArticles": {
+        "title": "Artículos generados",
+        "selectAll": "Seleccionar todo"
+      },
+      "saveResults": {
+        "title": "Resultados de guardado"
+      },
+      "status": {
+        "generated": "✓ Generado",
+        "saved": "✓ Guardado",
+        "failed": "✗ Fallido"
+      },
+      "errors": {
+        "emptyKeywords": "Ingrese al menos un keyword",
+        "noValidKeywords": "Ingrese al menos un keyword válido",
+        "generateFailed": "No se pudo generar los artículos, por favor inténtelo de nuevo",
+        "noArticlesToSave": "No hay artículos para guardar",
+        "noSelectedArticles": "No se han seleccionado artículos para guardar",
+        "saveFailed": "No se pudo guardar los artículos, por favor inténtelo de nuevo"
+      },
+      "success": {
+        "generated": "Se generaron exitosamente {successCount} artículos{errorMessage}",
+        "saved": "{successCount} artículos {publishStatus}{errorMessage}",
+        "withErrors": ", {errorCount} fallaron"
+      },
+      "publishStatus": {
+        "published": "publicado",
+        "draft": "guardado como borrador"
+      }
+    },
+    "new": {
+      "title": "Crear Nuevo Artículo",
+      "keywordSection": {
+        "label": "Palabra clave",
+        "placeholder": "Introduce la palabra clave del artículo"
+      },
+      "articleForm": {
+        "titleLabel": "Título",
+        "excerptLabel": "Extracto",
+        "contentLabel": "Contenido",
+        "publishImmediately": "Publicar inmediatamente"
+      },
+      "buttons": {
+        "generating": "Generando...",
+        "generateArticle": "Generar Artículo",
+        "saving": "Guardando...",
+        "saveArticle": "Guardar Artículo",
+        "cancel": "Cancelar"
+      },
+      "errors": {
+        "emptyKeyword": "Ingrese una palabra clave",
+        "generateFailed": "Falló la generación del artículo, inténtelo de nuevo",
+        "saveFailed": "Falló el guardado del artículo, inténtelo de nuevo"
+      },
+      "success": {
+        "generated": " Artículo generado exitosamente",
+        "published": " Artículo publicado",
+        "savedAsDraft": " Artículo guardado como borrador"
+      }
+    },
+    "edit": {
+      "title": "Editar Artículo",
+      "loading": "Cargando...",
+      "articleForm": {
+        "titleLabel": "Título",
+        "excerptLabel": "Extracto",
+        "contentLabel": "Contenido",
+        "publishArticle": "Publicar Artículo"
+      },
+      "deleteDialog": {
+        "title": "Confirmar Eliminación",
+        "description": "¿Está seguro de que desea eliminar este artículo? Esta acción no se puede deshacer."
+      },
+      "buttons": {
+        "saving": "Guardando...",
+        "saveArticle": "Guardar Artículo",
+        "deleting": "Eliminando...",
+        "deleteArticle": "Eliminar Artículo",
+        "delete": "Eliminar",
+        "cancel": "Cancelar"
+      },
+      "errors": {
+        "articleNotFound": " Artículo no encontrado",
+        "fetchFailed": "Error al recuperar el artículo",
+        "updateFailed": "Error al actualizar el artículo",
+        "deleteFailed": "Error al eliminar el artículo"
+      },
+      "success": {
+        "updated": " Artículo actualizado con éxito",
+        "deleted": " Artículo eliminado con éxito"
+      }
+    },
+    "list": {
+      "title": "Gestión de Artículos",
+      "buttons": {
+        "createNew": "Crear Nuevo Artículo",
+        "batchCreate": "Crear por Lote"
+      },
+      "table": {
+        "headers": {
+          "title": "Título",
+          "createdDate": "Fecha de creación",
+          "status": "Estado",
+          "actions": "Acciones"
+        },
+        "noArticles": "No se han encontrado artículos"
+      },
+      "status": {
+        "published": "Publicado",
+        "draft": "Borrador"
+      },
+      "actions": {
+        "edit": "Editar",
+        "view": "Ver"
+      }
+    }
+  },
+  "limitReachedDialog": {
+    "title": "Se ha alcanzado el límite de análisis gratuito",
+    "description": "¡Prueba las emocionantes funciones de role-playing de CraveU AI para una experiencia más inmersiva!",
+    "maybeLaterButton": "Tal vez después",
+    "visitButton": "Visitar CraveAI"
+  },
+  "aiBeauty": {
+    "howItWorks": {
+      "title": "¿Cómo funciona nuestra prueba de puntuación de belleza?",
+      "steps": {
+        "1": {
+          "title": "Sube tu selfie",
+          "description": "Toma una selfie clara o sube una foto existente. Nuestra IA funciona mejor con imágenes frontales, bien iluminadas que muestren tu rostro completo."
+        },
+        "2": {
+          "title": "Análisis Facial de IA",
+          "description": "Nuestra IA avanzada analiza tus características faciales, estado de la piel, simetría y proporciones usando la misma tecnología que Prettyscale pero con mayor precisión."
+        },
+        "3": {
+          "title": "Obtén tu Puntuación de Belleza",
+          "description": "Recibe tu calificación de atractivo en una escala de 1 a 10, con un desglose detallado de características individuales y recomendaciones personalizadas para mejoras."
+        }
+      }
+    },
+    "promotion": {
+      "title": "Descubre tu verdadero puntaje de belleza hoy",
+      "description": "Experimenta el test de atracción por AI más avanzado en línea - ¡más preciso que Prettyscale! Obten un puntaje facial completo, un análisis de piel detallado y perspectivas de belleza personalizadas impulsadas por la tecnología de análisis facial de IA de última generación.",
+      "tags": {
+        "beautyScoreTest": "Prueba de Puntaje de Belleza",
+        "aiAttractivenessTest": "Test de Atractividad por AI",
+        "faceAnalysis": "Análisis Facial",
+        "onlineSkinAnalysis": "Análisis de piel en línea",
+        "faceScore": "Puntuación facial"
+      }
+    },
+    "hero": {
+      "title": "Test de Belleza y Atractivo por AI",
+      "description": "Obtenga su puntuación facial instantáneamente con nuestro avanzado análisis facial por AI. Descubra su puntuación de belleza, su calificación de atractivo y su análisis de piel personalizado en segundos."
+    },
+    "uploadSection": {
+      "title": "Prueba de Análisis Facial",
+      "description": "Carga tu selfie para obtener una puntuación de atractivo instantánea y un análisis detallado de los rasgos faciales. Similar a Prettyscale pero con tecnología AI avanzada.",
+      "uploadPrompt": "Cargar selfie",
+      "fileTypes": "JPG, PNG o GIF (máx. 3MB)",
+      "portraitPreviewAlt": "Vista previa del retrato",
+      "changeButton": "Cambiar",
+      "analyzingText": "Analizando rostro...",
+      "analyzeButton": "Obtener tu puntuación de atracción",
+      "features": {
+        "title": "Análisis facial completo",
+        "facialFeatures": "Puntuación de características faciales (ojos, nariz, boca, estructura)",
+        "attractivenessRating": "Calificación de atracción general en una escala de 1 a 10",
+        "skinAnalysis": "Análisis de la piel y evaluación del tono",
+        "comparison": "Comparación con los estándares de belleza y consejos personalizados"
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "items": {
+        "accuracy": {
+          "question": "¿Cuánto de preciso es este test de atracción por IA?",
+          "answer": "Nuestro analizador de belleza por IA proporciona una evaluación altamente precisa basada en la simetría facial, las proporciones y las características universalmente consideradas atractivas. Aunque la belleza es subjetiva, nuestro algoritmo se ha entrenado en miles de rostros para identificar estándares de belleza comunes entre culturas."
+        },
+        "comparison": {
+          "question": "¿Es similar a Prettyscale?",
+          "answer": "Sí, nuestra herramienta de análisis facial es similar a Prettyscale pero utiliza una tecnología AI más avanzada para una mayor precisión. Proporcionamos un análisis más detallado de las características faciales y del estado de la piel, junto con recomendaciones personalizadas."
+        },
+        "calculation": {
+          "question": "¿Cómo se calcula mi puntuación de belleza?",
+          "answer": "Tu puntuación facial se calcula analizando características faciales clave (ojos, nariz, boca, estructura), calidad de la piel, simetría y proporciones. La IA compara estas mediciones con los estándares de belleza y genera una puntuación general de atractivo en una escala de 1 a 10."
+        },
+        "privacy": {
+          "question": "¿Se almacena o comparte mi foto?",
+          "answer": "Tu privacidad es nuestra prioridad. Tus fotos subidas se procesan solo para análisis y no se almacenan permanentemente ni se comparten con terceros. Todo el procesamiento se realiza de manera segura en nuestros servidores y las imágenes se eliminan después del análisis."
+        },
+        "skinAnalysis": {
+          "question": "¿También puedo usar esto para el análisis de la piel?",
+          "answer": "¡Sí! Nuestro analizador de belleza AI incluye un análisis de piel completo como parte de su evaluación. Evalúa la claridad, tono, textura y el color general de la piel, proporcionando recomendaciones específicas para mejorar el cuidado de la piel."
+        },
+        "improvement": {
+          "question": "¿Cómo puedo mejorar mi puntuación de atractivo?",
+          "answer": "Después de tu análisis, proporcionamos recomendaciones personalizadas basadas en tus resultados específicos. Estas pueden incluir consejos para mejores ángulos de foto, iluminación, sugerencias de cuidado de la piel o características para realzar. ¡Recuerda que nuestra herramienta está diseñada para ser divertida e informativa!"
+        }
+      }
+    },
+    "emptyResult": {
+      "title": "Análisis de la puntuación facial",
+      "description": "Carga tu selfie para obtener una puntuación de atractivo instantánea y un análisis facial detallado",
+      "buttonText": "Iniciar prueba de belleza"
+    },
+    "errorResult": {
+      "title": "Error de análisis",
+      "tryAgainButton": "Intentar de nuevo"
+    },
+    "analysisResult": {
+      "title": "Puntuación de Atractivo",
+      "sections": {
+        "facialFeatures": "Características Faciales",
+        "skinAnalysis": "Análisis de la Piel",
+        "expressionPresence": "Expresión & Presencia",
+        "beautyStrengths": "Tus Fortalezas en Belleza",
+        "enhancementTips": "Consejos de Mejora"
+      },
+      "categories": {
+        "eyes": "Ojos",
+        "nose": "Nariz",
+        "mouth": "Boca",
+        "facialStructure": "Estructura Facial",
+        "skinClarity": "Claridad de la piel",
+        "skinTone": "Tonificación de la piel",
+        "complexion": "Complexión",
+        "overallBalance": "Balance general",
+        "attractivenessImpact": "Impacto en la atracción"
+      }
+    }
+  }
+}

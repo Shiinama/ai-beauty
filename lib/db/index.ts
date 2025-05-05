@@ -3,6 +3,8 @@ import { drizzle } from 'drizzle-orm/d1'
 
 import * as schema from './schema'
 
+export const runtime = 'edge'
+
 export const createDb = () => drizzle(getRequestContext().env.DB, { schema })
 
 export type Db = ReturnType<typeof createDb>

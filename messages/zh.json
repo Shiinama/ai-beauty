@@ -1,0 +1,353 @@
+{
+  "common": {
+    "loading": "正在加载...",
+    "cancel": "取消",
+    "close": "关闭",
+    "freeUsage": "{used}/{total} 免费积分"
+  },
+  "header": {
+    "about": "关于"
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "快速链接",
+      "craveUAI": "CraveU 人工智能",
+      "craveUAIPr": "CraveU 人工智能新闻",
+      "craveUAICreatorBenefit": "CraveU 创作者福利",
+      "blogs": "博客"
+    },
+    "copyright": "All rights reserved."
+  },
+  "siteInfo": {
+    "brandName": "AI Beauty Analyzer",
+    "meta": {
+      "title": "AI Beauty Analyzer - 用 AI 分析您的美丽分数",
+      "description": "上传您的照片，获得 AI 驱动的美容分析。发现您的美丽分数，并获得关于面部特征的个性化反馈。"
+    }
+  },
+  "login": {
+    "signout": "退出登录",
+    "form": {
+      "continueWithGoogle": "继续使用 Google 登录",
+      "errorMessage": "使用 {provider} 登录时出错"
+    },
+    "loginText": "登录"
+  },
+  "userProvider": {
+    "errorFetchingUsage": "获取使用情况时出错：",
+    "errorUseUserHook": "useUser 必须在 UserProvider 内使用",
+    "loginModal": {
+      "title": "欢迎来到 AI 美容分析器",
+      "description": "登录以继续您的旅程"
+    }
+  },
+  "blog": {
+    "postNotFound": "找不到帖子",
+    "postNotFoundDescription": "您要查找的博客帖子未找到。",
+    "publishedAt": "发布于 {date}"
+  },
+  "blogs": {
+    "pageTitle": "博客文章",
+    "metaTitle": "见解与文章 | {brandName} 博客",
+    "metaDescription": "探索我们最新的美容分析、人工智能技术和面部美学文章。发现专家见解、技巧和人工智能驱动的美容评估领域的趋势。",
+    "noArticles": "没有可用的文章",
+    "publishedAt": "发布于 {date}"
+  },
+  "aiBeauty": {
+    "howItWorks": {
+      "title": "我们的美丽评分测试是如何工作的",
+      "steps": {
+        "1": {
+          "title": "上传您的自拍照",
+          "description": "拍摄一张清晰的自拍或上传一张现有照片。我们的AI在处理前置、光线充足的面部全貌照片时效果最佳。"
+        },
+        "2": {
+          "title": "AI面部分析",
+          "description": "我们的先进AI分析您的面部特征、皮肤状况、对称性和比例，使用与Prettyscale相同的技术但具有更高的准确性。"
+        },
+        "3": {
+          "title": "获取您的美丽评分",
+          "description": "获得您在1-10分范围内的吸引力评分，详细分解各项特征，并获得个性化的改善建议。"
+        }
+      }
+    },
+    "promotion": {
+      "title": "发现你真实的美丽分数",
+      "description": "体验最先进的在线AI吸引力测试——比Prettyscale更准确！获得全面的面部评分、详细的皮肤分析以及由尖端AI面部分析技术驱动的个性化美容见解。",
+      "tags": {
+        "beautyScoreTest": "美丽分数测试",
+        "aiAttractivenessTest": "AI吸引力测试",
+        "faceAnalysis": "面部分析",
+        "onlineSkinAnalysis": "在线皮肤分析",
+        "faceScore": "面部评分"
+      }
+    },
+    "hero": {
+      "title": "AI 美容与吸引力测试",
+      "description": "立即获取您的面部评分，通过我们先进的AI面部分析。发现您的美丽评分、吸引力评级以及个性化的皮肤分析，只需几秒钟。"
+    },
+    "uploadSection": {
+      "title": "面部分析测试",
+      "description": "上传您的自拍照，立即获得吸引力评分，并进行详细的面部特征分析。与Prettyscale类似，但采用更先进的AI技术。",
+      "uploadPrompt": "上传您的自拍照",
+      "fileTypes": "JPG、PNG 或 GIF（最大3MB）",
+      "portraitPreviewAlt": "肖像预览",
+      "changeButton": "更换",
+      "analyzingText": "正在分析面部...",
+      "analyzeButton": "获取你的吸引力评分",
+      "features": {
+        "title": "完整的面部分析",
+        "facialFeatures": "面部特征评分（眼睛、鼻子、嘴巴、结构）",
+        "attractivenessRating": "整体吸引力评分（1-10分）",
+        "skinAnalysis": "皮肤分析和肤色评估",
+        "comparison": "与美容标准进行比较并提供个性化建议"
+      }
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": {
+        "accuracy": {
+          "question": "这个AI吸引力测试有多准确？",
+          "answer": "我们的AI美容分析器基于面部对称性、比例和普遍被认为具有吸引力的特征，提供高度准确的评估。尽管美是主观的，但我们的算法已在数千张面孔上进行了训练，以识别跨文化常见的美容标准。"
+        },
+        "comparison": {
+          "question": "这与Prettyscale相似吗？",
+          "answer": "是的，我们的面部分析工具与Prettyscale相似，但采用了更先进的AI技术以提高准确性。我们提供更详细的面部特征和皮肤分析，以及个性化的建议。"
+        },
+        "calculation": {
+          "question": "我的美丽分数是如何计算的？",
+          "answer": "您的面部分数是通过分析关键面部特征（眼睛、鼻子、嘴巴、结构）、皮肤质量、对称性和比例来计算的。AI将这些测量结果与美丽标准进行比较，并在1-10的范围内生成一个整体吸引力分数。"
+        },
+        "privacy": {
+          "question": "我的照片会被存储或分享吗？",
+          "answer": "您的隐私是我们最优先考虑的。您上传的照片仅用于分析处理，并不会永久存储或与第三方共享。所有处理都在我们的服务器上安全进行，分析完成后图片会被删除。"
+        },
+        "skinAnalysis": {
+          "question": "我可以用这个来做皮肤分析吗？",
+          "answer": "可以！我们的AI美容分析器包括全面的皮肤分析作为评估的一部分。它评估皮肤的清晰度、色调、质地和整体肤色，并提供特定的皮肤护理改善建议。"
+        },
+        "improvement": {
+          "question": "如何提高我的吸引力评分？",
+          "answer": "在分析之后，我们会根据您的具体结果提供个性化的建议。这可能包括更好的照片角度、光线、皮肤护理建议或强调某些特征。请记住，我们的工具旨在有趣和有信息量！"
+        }
+      }
+    },
+    "emptyResult": {
+      "title": "您的面部分数分析",
+      "description": "上传您的自拍照，立即获得吸引力评分和详细的面部分析",
+      "buttonText": "开始美颜测试"
+    },
+    "errorResult": {
+      "title": "分析错误",
+      "tryAgainButton": "重试"
+    },
+    "analysisResult": {
+      "title": "吸引力评分",
+      "sections": {
+        "facialFeatures": "面部特征",
+        "skinAnalysis": "皮肤分析",
+        "expressionPresence": "表情与气质",
+        "beautyStrengths": "你的美丽优势",
+        "enhancementTips": "增强建议"
+      },
+      "categories": {
+        "eyes": "眼睛",
+        "nose": "鼻子",
+        "mouth": "嘴巴",
+        "facialStructure": "面部结构",
+        "skinClarity": "皮肤 clarity",
+        "skinTone": "皮肤 tone",
+        "complexion": " complexion",
+        "overallBalance": "整体平衡",
+        "attractivenessImpact": "吸引力影响"
+      }
+    }
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "{brandName} 的使命、团队和背后的故事",
+    "metaDescription": "了解我们的团队以及AI Beauty Analyzer背后的故事。Cozyai LLC 是 CraveU AI 的创造者，CraveU AI 是一个专注于 NSFW AI Chat聊天的产品，拥有行业领先的模型效果和图像生成能力。",
+    "aiBeautyAnalysis": "AI 美容分析",
+    "mission": {
+      "title": "我们的小玩具",
+      "description": "在 AI 美容分析器中，我们提供了一种有趣且创新的方式来探索 AI 驱动的美容分析。由 CraveU AI 背后的团队快速创建，该工具展示了现代 AI 在有趣背景下的能力。",
+      "poweredBy": "由先进的AI技术驱动"
+    },
+    "team": {
+      "title": "我们的团队",
+      "company": "Cozyai LLC",
+      "mainProduct": "CraveU.ai",
+      "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
+      "expertise": "我们专注于 NSFW AI 角色扮演，提供行业领先的模型效果和图像生成能力。",
+      "whyChoose": "为什么选择我们的产品",
+      "weAre": "我们是<company>Cozyai LLC</company>，<product>CraveU.ai</product>的团队。"
+    },
+    "story": {
+      "title": "我们的故事",
+      "description": "这个项目仅用了20分钟就创建而成。它旨在成为每个人都能享受的有趣玩具，所以请不要过于苛刻地评判它！"
+    },
+    "tagline": "来自LLC的一个有趣项目——拓展AI互动边界",
+    "acknowledgement": "致敬LLC",
+    "features": {
+      "conversations": {
+        "title": "智能对话",
+        "description": "与我们的先进AI模型进行自然流畅的对话，这些模型能够理解上下文并以个性化的回应做出反应。"
+      },
+      "imageGeneration": {
+        "title": "图像生成",
+        "description": "使用我们先进的AI图像生成技术，创建令人惊叹的定制图像。"
+      },
+      "customization": {
+        "title": "深度定制",
+        "description": "通过广泛的个性化选项，量身定制您的每一种体验。"
+      },
+      "emotionalIntelligence": {
+        "title": "情商",
+        "description": "我们的AI理解并回应情感线索，创造更有意义的互动。"
+      },
+      "privacy": {
+        "title": "隐私与安全",
+        "description": "您的数据和对话受到企业级安全和隐私控制的保护。"
+      }
+    }
+  },
+  "admin": {
+    "batch": {
+      "title": "批量创建文章",
+      "backToArticles": "返回文章",
+      "keywordsCard": {
+        "title": "输入关键词",
+        "label": "关键词（每行一个）",
+        "placeholder": "输入关键词，每行一个"
+      },
+      "publishImmediately": "立即发布",
+      "buttons": {
+        "generating": "生成中...",
+        "generateArticles": "生成文章",
+        "saving": "保存中...",
+        "saveSelected": "保存选定的文章"
+      },
+      "generatedArticles": {
+        "title": "生成的文章",
+        "selectAll": "全选"
+      },
+      "saveResults": {
+        "title": "保存结果"
+      },
+      "status": {
+        "generated": "✓ 已生成",
+        "saved": "✓ 已保存",
+        "failed": "✗ 失败"
+      },
+      "errors": {
+        "emptyKeywords": "请至少输入一个关键词",
+        "noValidKeywords": "请至少输入一个有效关键词",
+        "generateFailed": "生成文章失败，请重试",
+        "noArticlesToSave": "没有文章可以保存",
+        "noSelectedArticles": "没有选择要保存的文章",
+        "saveFailed": "保存文章失败，请重试"
+      },
+      "success": {
+        "generated": "成功生成 {successCount} 篇文章{errorMessage}",
+        "saved": "{successCount}篇文章已{publishStatus}{errorMessage}",
+        "withErrors": ", {errorCount}篇失败"
+      },
+      "publishStatus": {
+        "published": "发布",
+        "draft": "保存为草稿"
+      }
+    },
+    "new": {
+      "title": "创建新文章",
+      "keywordSection": {
+        "label": "关键词",
+        "placeholder": "输入文章关键词"
+      },
+      "articleForm": {
+        "titleLabel": "标题",
+        "excerptLabel": "摘要",
+        "contentLabel": "内容",
+        "publishImmediately": "立即发布"
+      },
+      "buttons": {
+        "generating": "生成中...",
+        "generateArticle": "生成文章",
+        "saving": "保存中...",
+        "saveArticle": "保存文章",
+        "cancel": "取消"
+      },
+      "errors": {
+        "emptyKeyword": "请输入关键词",
+        "generateFailed": "生成文章失败，请重试",
+        "saveFailed": "保存文章失败，请重试"
+      },
+      "success": {
+        "generated": "文章生成成功",
+        "published": "文章已发布",
+        "savedAsDraft": "文章已保存为草稿"
+      }
+    },
+    "edit": {
+      "title": "编辑文章",
+      "loading": "加载中...",
+      "articleForm": {
+        "titleLabel": "标题",
+        "excerptLabel": "摘要",
+        "contentLabel": "内容",
+        "publishArticle": "发布文章"
+      },
+      "deleteDialog": {
+        "title": "确认删除",
+        "description": "你确定要删除这篇文章吗？此操作无法撤销。"
+      },
+      "buttons": {
+        "saving": "保存中...",
+        "saveArticle": "保存文章",
+        "deleting": "删除中...",
+        "deleteArticle": "删除文章",
+        "delete": "删除",
+        "cancel": "取消"
+      },
+      "errors": {
+        "articleNotFound": "文章未找到",
+        "fetchFailed": "获取文章失败",
+        "updateFailed": "更新文章失败",
+        "deleteFailed": "删除文章失败"
+      },
+      "success": {
+        "updated": "文章更新成功",
+        "deleted": "文章删除成功"
+      }
+    },
+    "list": {
+      "title": "文章管理",
+      "buttons": {
+        "createNew": "新建文章",
+        "batchCreate": "批量创建"
+      },
+      "table": {
+        "headers": {
+          "title": "标题",
+          "createdDate": "创建日期",
+          "status": "状态",
+          "actions": "操作"
+        },
+        "noArticles": "未找到文章"
+      },
+      "status": {
+        "published": "已发布",
+        "draft": "草稿"
+      },
+      "actions": {
+        "edit": "编辑",
+        "view": "查看"
+      }
+    }
+  },
+  "limitReachedDialog": {
+    "title": "免费分析额度已用尽",
+    "description": "尝试 CraveU AI 兴奋人心的角色扮演功能，获得更沉浸式的体验！",
+    "maybeLaterButton": "稍后再试",
+    "visitButton": "访问 CraveAI"
+  }
+}

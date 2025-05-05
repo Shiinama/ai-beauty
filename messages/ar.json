@@ -1,0 +1,353 @@
+{
+  "common": {
+    "loading": "جار التحميل...",
+    "cancel": "إلغاء",
+    "close": "닫기",
+    "freeUsage": "{used}/{total} رصيد مجاني"
+  },
+  "header": {
+    "about": "حول"
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "روابط سريعة",
+      "craveUAI": "CraveU الذكاء الاصطناعي",
+      "craveUAIPr": "CraveU أخبار الذكاء الاصطناعي",
+      "craveUAICreatorBenefit": "CraveU مزايا المبدعين",
+      "blogs": "مدونات"
+    },
+    "copyright": "جميع الحقوق محفوظة"
+  },
+  "siteInfo": {
+    "brandName": "AI Beauty Analyzer",
+    "meta": {
+      "title": "AI Beauty Analyzer - تحليل درجة جمالك باستخدام الذكاء الاصطناعي",
+      "description": "ارفع صورتك واحصل على تحليل جمالي مدعوم بالذكاء الاصطناعي. اكتشف درجة جمالك واحصل على ملاحظات مخصصة حول ملامح وجهك."
+    }
+  },
+  "login": {
+    "signout": "تسجيل الخروج",
+    "form": {
+      "continueWithGoogle": "استمر مع Google",
+      "errorMessage": "خطأ في الدخول مع {provider}"
+    },
+    "loginText": "تسجيل الدخول"
+  },
+  "userProvider": {
+    "errorFetchingUsage": "خطأ في استرداد عد العدد:",
+    "errorUseUserHook": "يجب استخدام useUser داخل UserProvider",
+    "loginModal": {
+      "title": "مرحبًا في م 분 tích الجمال AI",
+      "description": "سجل دخولك لمواصلة رحلتك"
+    }
+  },
+  "blog": {
+    "postNotFound": "المشاركة غير موجودة",
+    "postNotFoundDescription": "المشاركة التي تبحث عنها لم تُعثر عليها.",
+    "publishedAt": "نشرت في {date}"
+  },
+  "blogs": {
+    "pageTitle": "منشورات المدونة",
+    "metaTitle": "الإحصائيات & المقالات | مدونة {brandName}",
+    "metaDescription": "استكشف مقالاتنا الأخيرة حول تحليل الجمال، تكنولوجيا الذكاء الاصطناعي، والجوانب الجمالية للوجه. اكتشف آراء الخبراء، النصائح، والاتجاهات في عالم تقييم الجمال المدعم بالذكاء الاصطناعي.",
+    "noArticles": "لا توجد مقالات متوفرة",
+    "publishedAt": "تم النشر في {date}"
+  },
+  "about": {
+    "title": "حولنا",
+    "subtitle": "تعلم عن مهمتنا، فريقنا، وقصة {brandName}",
+    "metaDescription": "تعرف على فريقنا والقصص وراء محلل الجمال AI. Cozyai LLC هي منشئ CraveU AI، منتج يركز على دردشة NSFW AI مع تأثيرات النماذج الرائدة في الصناعة وقدرات توليد الصور.",
+    "aiBeautyAnalysis": "تحليل الجمال AI",
+    "mission": {
+      "title": "مهمتنا",
+      "description": "في AI Beauty Analyzer، نقدم طريقة مسلية و革nova لاستكشاف تحليل الجمال المدعوم بAI. تم إنشاؤه بسرعة بواسطة فريق CraveU.ai، هذا الأداة تสาธق قدرات AI الحديثة في سياق مسل.",
+      "poweredBy": "مدعوم بเทคโนโลยيا AI المتطورة"
+    },
+    "team": {
+      "title": "فريقنا",
+      "company": "Cozyai LLC",
+      "mainProduct": "CraveU.ai",
+      "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
+      "expertise": "نحن نspecialize في NSFW AI Role Play مع م.setModel_effects وCapabilities_.Leading في توليد الصور.",
+      "whyChoose": "لماذا تختار منتجاتنا",
+      "weAre": "نحن <company>Cozyai LLC</company>، فريق <product>CraveU.ai</product>."
+    },
+    "story": {
+      "title": "قصتنا",
+      "description": "تم إنشاء هذا المشروع في غضون 20 دقيقة فقط. وهو مصمم ليكون لعبة ممتعة للجميع، لذا لا تكونوا قاسين للغاية عليه!"
+    },
+    "tagline": "مشروع ممتع من LLC - توسيع حدود التفاعل مع الذكاء الاصطناعي",
+    "acknowledgement": "تقديراً لLLC",
+    "features": {
+      "conversations": {
+        "title": "المحادثات الذكية",
+        "description": "كن جزءًا من محادثات طبيعية وسلسة مع نماذج الذكاء الاصطناعي المتقدمة التي تفهم السياق وتتفاعل بشخصية."
+      },
+      "imageGeneration": {
+        "title": "توليد الصور",
+        "description": "أنشئ صورًا مذهلة ومخصصة باستخدام تقنية جيل الصور人工智能 المتطورة."
+      },
+      "customization": {
+        "title": "التكUSTOMIZATION العميقة",
+        "description": "استخدم خيارات التخصيص الواسعة لتخصيص كل جزء من تجربتك."
+      },
+      "emotionalIntelligence": {
+        "title": "الذكاء العاطفي",
+        "description": "يUnderstand ويرد على الإشارات العاطفية، مما ي создаёт تفاعلات更有意义."
+      },
+      "privacy": {
+        "title": "الخصوصية والأمان",
+        "description": "بياناتك ومحادثاتك محمية بواسطة أجهزة أمن وخصوصية من درجة الشركات."
+      }
+    }
+  },
+  "admin": {
+    "batch": {
+      "title": "إنشاء المقالات بشكل مركزي",
+      "backToArticles": "العودة إلى المقالات",
+      "keywordsCard": {
+        "title": "أدخل الكلمات المفتاحية",
+        "label": "الكلمات المفتاحية (كلمة واحدة في كل سطر)",
+        "placeholder": "أدخل الكلمات المفتاحية،كلمة في سطر"
+      },
+      "publishImmediately": "نشر على الفور",
+      "buttons": {
+        "generating": "جاري الإنشاء...",
+        "generateArticles": "إنشاء المقالات",
+        "saving": "جاري الحفظ...",
+        "saveSelected": "احفظ المقالات المحددة"
+      },
+      "generatedArticles": {
+        "title": "المقالات المنشورة",
+        "selectAll": "اختر الكل"
+      },
+      "saveResults": {
+        "title": "نتائج الحفظ"
+      },
+      "status": {
+        "generated": "✓ تم الجيل",
+        "saved": "✓ تم الحفظ",
+        "failed": "✗ فشل"
+      },
+      "errors": {
+        "emptyKeywords": "กรุณากรอกคำค้นหาอย่างน้อย 1 คำ",
+        "noValidKeywords": "กรุณากรอกคำค้นหาที่ถูกต้องอย่างน้อย 1 คำ",
+        "generateFailed": "فشل في إنشاء المقالات، يرجى المحاولة مرة أخرى",
+        "noArticlesToSave": "لا مقالات للحفظ",
+        "noSelectedArticles": "لا مقالات محددة للحفظ",
+        "saveFailed": "فشل في حفظ المقالات، يرجى المحاولة مرة أخرى"
+      },
+      "success": {
+        "generated": "تم إنشاء {successCount} مقالة بنجاح{errorMessage}",
+        "saved": "{successCount} مقالات {publishStatus}{errorMessage}",
+        "withErrors": ", {errorCount} فشلوا"
+      },
+      "publishStatus": {
+        "published": "تم النشر",
+        "draft": "تم الحفظ ك טיוטה"
+      }
+    },
+    "new": {
+      "title": "إنشاء مقالة جديدة",
+      "keywordSection": {
+        "label": "كلمة مفتاحية",
+        "placeholder": "أدخل مفتاح المقالة"
+      },
+      "articleForm": {
+        "titleLabel": "العنوان",
+        "excerptLabel": "الاستعارة",
+        "contentLabel": "المحتوى",
+        "publishImmediately": "أضف على الفور"
+      },
+      "buttons": {
+        "generating": "جاري التوليد...",
+        "generateArticle": "توليد المقالة",
+        "saving": "جاري الحفظ...",
+        "saveArticle": "حفظ المقالة",
+        "cancel": "إلغاء"
+      },
+      "errors": {
+        "emptyKeyword": "يرجى إدخال مفتاح الكلمة",
+        "generateFailed": "فشل في توليد المقالة، يرجى المحاولة مرة أخرى",
+        "saveFailed": "فشل في حفظ المقالة، يرجى المحاولة مرة أخرى"
+      },
+      "success": {
+        "generated": "تم توليد المقالة بنجاح",
+        "published": "تم نشر المقالة",
+        "savedAsDraft": "تم حفظ المقالة كمسودة"
+      }
+    },
+    "edit": {
+      "title": "تعديل المقالة",
+      "loading": "جار التحميل...",
+      "articleForm": {
+        "titleLabel": "العنوان",
+        "excerptLabel": "ملخص",
+        "contentLabel": "المحتوى",
+        "publishArticle": "نشر المقال"
+      },
+      "deleteDialog": {
+        "title": "تأكيد الحذف",
+        "description": "هل أنت متأكد من رغبتك في حذف هذا المقال؟ لا يمكن التراجع عن هذا الإجراء."
+      },
+      "buttons": {
+        "saving": "저장 중...",
+        "saveArticle": "저장 중...",
+        "deleting": "삭제 중...",
+        "deleteArticle": "삭제 중...",
+        "delete": "삭제",
+        "cancel": "إلغاء"
+      },
+      "errors": {
+        "articleNotFound": "المقالة غير موجودة",
+        "fetchFailed": "فشل في استرداد المقالة",
+        "updateFailed": "فشل في تحديث المقالة",
+        "deleteFailed": "فشل في حذف المقالة"
+      },
+      "success": {
+        "updated": "تم تحديث المقال بنجاح",
+        "deleted": "تم حذف المقال بنجاح"
+      }
+    },
+    "list": {
+      "title": "إدارة المقالات",
+      "buttons": {
+        "createNew": "إنشاء مقال جديد",
+        "batchCreate": "إنشاء بالLOTS"
+      },
+      "table": {
+        "headers": {
+          "title": "العنوان",
+          "createdDate": "تاريخ الإنشاء",
+          "status": "الحالة",
+          "actions": "الإجراءات"
+        },
+        "noArticles": "لم يتم العثور على مقالات"
+      },
+      "status": {
+        "published": "تم النشر",
+        "draft": "مسودة"
+      },
+      "actions": {
+        "edit": "تعديل",
+        "view": "عرض"
+      }
+    }
+  },
+  "limitReachedDialog": {
+    "title": "وصلت إلى حد التحليل المجاني",
+    "description": "جرب ميزات الدردشة بالدور التي تقدمها CraveU AI المثيرة لتجربة أكثر إمتاعاً!",
+    "maybeLaterButton": "ربما لاحقاً",
+    "visitButton": "زور CraveAI"
+  },
+  "aiBeauty": {
+    "howItWorks": {
+      "title": "كيف يعمل اختبار درجة الجمال الخاص بنا؟",
+      "steps": {
+        "1": {
+          "title": "تحميل صورتك الشخصية",
+          "description": "اختر صورة سيلفي واضحة أو قم بتحميل صورة موجودة. ت橪م AI بشكل أفضل مع الصور الأمامية، المضاءة جيدًا التي تظهر وجهك بالكامل."
+        },
+        "2": {
+          "title": "تحليل الوجه بواسطة AI",
+          "description": "تعمل AI المتقدمة على تحليل ملامح الوجه، حالة الجلد، التماثل، والتناسب باستخدام نفس تقنية Prettyscale لكن بدرجة دقة أعلى."
+        },
+        "3": {
+          "title": "احصل على درجة جمالك",
+          "description": "احصل على درجة جمالك على مقياس من 1 إلى 10، مع تفاصيل مفصلة حول الملامح الفردية ونصائح تحسين مخصصة."
+        }
+      }
+    },
+    "promotion": {
+      "title": "اكتشف درجة جمالك الحقيقية اليوم",
+      "description": "استخدم أحدث اختبار الذكاء الاصطناعي للجاذبية عبر الإنترنت - أكثر دقة من Prettyscale! احصل على درجة شاملة للوجه، تحليل البشرة التفصيلي، ونصائح جمالية مخصصةpowered بเทคโนโลยيا تحليل الوجه المتطورة من الذكاء الاصطناعي.",
+      "tags": {
+        "beautyScoreTest": "اختبار درجة الجمال",
+        "aiAttractivenessTest": "اختبار الجاذبية بالذكاء الاصطناعي",
+        "faceAnalysis": "تحليل الوجه",
+        "onlineSkinAnalysis": "تحليل البشرة عبر الإنترنت",
+        "faceScore": "คะแนนใบหน้า"
+      }
+    },
+    "hero": {
+      "title": "اختبار الجمال والجاذبية بواسطة AI",
+      "description": "احصل على درجة وجهك فورًا باستخدام تحليل الوجه المتقدم عبر AI. اكتشف درجة جمالك، تقييم جاذبيتك، وتحليل بشرتك المخصص في ثوانٍ."
+    },
+    "uploadSection": {
+      "title": "اختبار تحليل الوجه",
+      "description": "تحميل صورتك الشخصية للحصول على درجة الجاذبية الفوري وتحليل مفصل للم特징 الوجه. مماثل لPrettyscale لكن مع تقنية AI المتطورة.",
+      "uploadPrompt": "تحميل صورتك الشخصية",
+      "fileTypes": "JPG, PNG, أو GIF (حد أقصى 3MB)",
+      "portraitPreviewAlt": "просмотр портрета",
+      "changeButton": "تغيير",
+      "analyzingText": "تحليل الوجه...",
+      "analyzeButton": "احصل على درجة جاذبيتك",
+      "features": {
+        "title": "تحليل الوجه الكامل",
+        "facialFeatures": "أداء الخصائص الوجهية (الأعين، الأنف، الفم، التركيب)",
+        "attractivenessRating": "التقييم العام للجاذبية على مقياس من 1 إلى 10",
+        "skinAnalysis": "تحليل الجلد وتقدير درجة اللون",
+        "comparison": "المقارنة مع معايير الجمال والنصائح الشخصية"
+      }
+    },
+    "faq": {
+      "title": "الأسئلة الشائعة",
+      "items": {
+        "accuracy": {
+          "question": "ما مدى دقة هذا الاختبار الذكاء الاصطناعي لجاذبية؟",
+          "answer": "يقدم م phân석 الجمال الذكاء الاصطناعي لدينا تقييماً عالي الدقة استناداً إلى توازن الوجه، النسب، والخصائص التي تُعتبر جذابة عالمياً. على الرغم من أن الجمال ذوق، تم تدريب خوارزميتنا على آلاف الوجوه لتحديد معايير الجمال الشائعة عبر الثقافات."
+        },
+        "comparison": {
+          "question": "هل هذا مماثل لـ Prettyscale؟",
+          "answer": "نعم، أداة تحليل الوجه الخاصة بنا مماثلة لـ Prettyscale، لكنها تستخدم تقنية AI أكثر تطورًا للحصول على دقة أعلى. نقدم تحليلًا أكثر تفصيلاً لملامح الوجه وتحليل الجلد، بالإضافة إلى اقتراحات مخصصة."
+        },
+        "calculation": {
+          "question": "كيف يتم حساب درجة جمالي؟",
+          "answer": "تُحسب درجة وجهك عن طريق تحليل ملامح الوجه الرئيسية (العيون، الأنف، الفم، البنية)، ونوعية الجلد، والتماثل، والنسب. تقارن الذكاء الاصطناعي هذه القياسات مع معايير الجمال وتوليد درجة جمال عامة في مقياس من 1 إلى 10."
+        },
+        "privacy": {
+          "question": "هل يتم حفظ صورتي أو مشاركتها؟",
+          "answer": "خاصة الخصوصية ل khách是我们 الأولوية. الصور التي تحميلها معالجة hanya untuk تحليل dan tidak disimpan secara permanen atau dibagikan dengan pihak ketiga. semua pengolahan dilakukan secara aman di server kami dan gambar dihapus setelah analisis."
+        },
+        "skinAnalysis": {
+          "question": "هل يمكنني استخدام هذا لتحليل الجلد أيضًا؟",
+          "answer": "نعم! م 분 tích الجمال AI شام ل تحليل الجلد كجزء من تقييمها. يقيم وضوح الجلد، اللون، النسيج، والملمس العام للجلد، ويوفر توصيات محددة لتحسين العناية بالجلد."
+        },
+        "improvement": {
+          "question": "كيف يمكنني تحسين درجة جذابتي؟",
+          "answer": "بعد تحليلك، نقدم نصائح مخصصة بناءً على نتائجك الخاصة. قد تشمل هذه النصائح نصائح حول زوايا أفضل لالتقاط الصور، الإضاءة، اقتراحات العناية بالجلد، أو الملامح التي يجب تأكيدها. اذكر أن أداتنا مصممة للترفيه والمعرفة!"
+        }
+      }
+    },
+    "emptyResult": {
+      "title": "تحليل درجة الوجه",
+      "description": "حمل صورتك الذاتية لت��ي تقييماً فورياً للجاذبية وتحليل مفصل للوجه",
+      "buttonText": "ابدأ اختبار الجمال"
+    },
+    "errorResult": {
+      "title": "خطأ في التحليل",
+      "tryAgainButton": "حاول مرة أخرى"
+    },
+    "analysisResult": {
+      "title": "점수 الجاذبية",
+      "sections": {
+        "facialFeatures": "م特征 الوجه",
+        "skinAnalysis": "تحليل الجلد",
+        "expressionPresence": "ال표정 & 매력",
+        "beautyStrengths": "قوتك في الجمال",
+        "enhancementTips": "نصائح تحسين"
+      },
+      "categories": {
+        "eyes": "العيون",
+        "nose": "الأنف",
+        "mouth": "الปาก",
+        "facialStructure": "الโครงสร้างใบหน้า",
+        "skinClarity": "جلد clarity",
+        "skinTone": "جلد tone",
+        "complexion": " complexion",
+        "overallBalance": "ال균형 العام",
+        "attractivenessImpact": "أثر الجاذبية"
+      }
+    }
+  }
+}

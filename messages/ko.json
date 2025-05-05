@@ -1,0 +1,353 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "cancel": "취소",
+    "close": "닫기",
+    "freeUsage": "{used}/{total} 무료 크레딧"
+  },
+  "header": {
+    "about": "에 대하여"
+  },
+  "footer": {
+    "quickLinks": {
+      "title": "빠른 링크",
+      "craveUAI": "CraveU AI",
+      "craveUAIPr": "CraveU AI 뉴스",
+      "craveUAICreatorBenefit": "CraveU 크리에이터 혜택",
+      "blogs": "블로그"
+    },
+    "copyright": "모든 권리 보유"
+  },
+  "siteInfo": {
+    "brandName": "AI Beauty Analyzer",
+    "meta": {
+      "title": "AI Beauty Analyzer - AI로您的뷰티 스코어 분석",
+      "description": "사진을 업로드하고 AI로 구동되는 미용 분석을 받으세요. 당신의 아름다움 점수를 발견하고 얼굴 특징에 대한 맞춤형 피드백을 받으세요."
+    }
+  },
+  "login": {
+    "signout": "로그아웃",
+    "form": {
+      "continueWithGoogle": "Google로 계속",
+      "errorMessage": "{provider} 로그인 중 오류가 발생했습니다"
+    },
+    "loginText": "로그인"
+  },
+  "userProvider": {
+    "errorFetchingUsage": "사용량을 가져오는 중 오류가 발생했습니다:",
+    "errorUseUserHook": "useUser는 UserProvider 내에서 사용해야 합니다",
+    "loginModal": {
+      "title": "AI 뷰티 분석기에 오신 것을 환영합니다",
+      "description": "여정을 계속하기 위해 로그인하세요"
+    }
+  },
+  "blog": {
+    "postNotFound": "게시물이 없습니다",
+    "postNotFoundDescription": "찾으시는 블로그 게시물이 없습니다.",
+    "publishedAt": "{date}에 게시됨"
+  },
+  "blogs": {
+    "pageTitle": "블로그 게시물",
+    "metaTitle": "인사이트 & 아티클 | {brandName} 블로그",
+    "metaDescription": "뷰티 분석, AI 기술, 얼굴 미학에 관한 최신 기사를 탐색하세요. AI 기반 뷰티 평가 세계에서 전문가 통찰, 팁, 트렌드를 발견하세요.",
+    "noArticles": "게시물이 없습니다",
+    "publishedAt": "게시일: {date}"
+  },
+  "about": {
+    "title": "關於我們",
+    "subtitle": "{brandName}에 대한 우리의 사명, 팀, 그리고 이야기를 알아보세요",
+    "metaDescription": "우리 팀과 AI Beauty Analyzer의 배경 이야기를 알아보세요. Cozyai LLC는 CraveU AI의 제작자로, 업계 최고의 모델 효과와 이미지 생성 기능을 갖춘 NSFW AI 챗봇에 특화된 제품입니다.",
+    "aiBeautyAnalysis": "AI 미용 분석",
+    "mission": {
+      "title": "우리의 사명",
+      "description": "AI 미용 분석기를 통해 AI 기반 미용 분석을 재미있고 혁신적인 방법으로 탐구할 수 있습니다. CraveU.ai를 만든 팀에 의해รวด 빠르게 제작된 이 도구는 현대 AI의 기능을 재미있는 컨텍스트에서 보여줍니다.",
+      "poweredBy": "고도화된 AI 기술로 구동"
+    },
+    "team": {
+      "title": "우리 팀",
+      "company": "Cozyai LLC",
+      "mainProduct": "CraveU.ai",
+      "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
+      "expertise": "우리는 NSFW AI 역할 연기 분야에서 전문성을 가지고 있으며, 업계를 선도하는 모델 효과와 이미지 생성 기능을 제공합니다.",
+      "whyChoose": "왜 우리의 제품을 선택해야 하는가",
+      "weAre": "نحن <company>Cozyai LLC</company>، فريق <product>CraveU.ai</product>."
+    },
+    "story": {
+      "title": "우리의 이야기",
+      "description": "이 프로젝트는 단 20분 만에 만들어졌습니다. 모두가 즐길 수 있는 재미있는 장난감으로 설계되었으므로 너무 비판하지 마세요!"
+    },
+    "tagline": "LLC의 재미있는 프로젝트 - AI 상호작용 경계 확장",
+    "acknowledgement": "LLC에 경의를 표합니다",
+    "features": {
+      "conversations": {
+        "title": "지능형 대화",
+        "description": "고도로 발달한 AI 모델과 자연스럽고 유연한 대화를 나눌 수 있습니다. 이 모델들은 문맥을 이해하고, 개성豊한 반응을 합니다."
+      },
+      "imageGeneration": {
+        "title": "이미지 생성",
+        "description": "我們的先進AI圖像生成技術，讓您輕鬆製作令人驚嘆的定制圖像。"
+      },
+      "customization": {
+        "title": "深度定制",
+        "description": "通過廣泛的個人化選項，為您的每種體驗量身定制。"
+      },
+      "emotionalIntelligence": {
+        "title": "정서적 지능",
+        "description": "당사의 AI는 감정적 신호를 이해하고 반응하여 더 의미 있는 상호작용을 창출합니다."
+      },
+      "privacy": {
+        "title": "개인정보 보호 및 보안",
+        "description": "귀하의 데이터와 대화는 기업급 보안 및 개인정보 보호 기능으로 보호됩니다."
+      }
+    }
+  },
+  "admin": {
+    "batch": {
+      "title": "배치로 기사 작성",
+      "backToArticles": "기사로 돌아가기",
+      "keywordsCard": {
+        "title": "키워드 입력",
+        "label": "키워드 (한 줄에 하나)",
+        "placeholder": "키워드를 입력하세요, 한 줄에 하나씩"
+      },
+      "publishImmediately": "즉시 게시",
+      "buttons": {
+        "generating": "생성 중...",
+        "generateArticles": "게시물 생성",
+        "saving": "저장 중...",
+        "saveSelected": "선택한 기사 저장"
+      },
+      "generatedArticles": {
+        "title": "생성된 기사",
+        "selectAll": "모두 선택"
+      },
+      "saveResults": {
+        "title": "저장 결과"
+      },
+      "status": {
+        "generated": "✓ 생성됨",
+        "saved": "✓ 저장됨",
+        "failed": "✗ 실패"
+      },
+      "errors": {
+        "emptyKeywords": "최소한 하나의 키워드를 입력하세요",
+        "noValidKeywords": "최소한 하나의 유효한 키워드를 입력하세요",
+        "generateFailed": "기사 생성에 실패했습니다. 다시 시도해주세요.",
+        "noArticlesToSave": "저장할 기사가 없습니다",
+        "noSelectedArticles": "저장할 기사가 선택되지 않았습니다",
+        "saveFailed": "기사 저장에 실패했습니다. 다시 시도해주세요."
+      },
+      "success": {
+        "generated": "{successCount} 개의 기사를 성공적으로 생성했습니다{errorMessage}",
+        "saved": "{successCount}개의 게시물이 {publishStatus}{errorMessage}",
+        "withErrors": ", {errorCount}개 실패"
+      },
+      "publishStatus": {
+        "published": "발행됨",
+        "draft": "ドラ프트로 저장됨"
+      }
+    },
+    "new": {
+      "title": "새 게시물 만들기",
+      "keywordSection": {
+        "label": "키워드",
+        "placeholder": "게시물 키워드 입력"
+      },
+      "articleForm": {
+        "titleLabel": "제목",
+        "excerptLabel": "간추리기",
+        "contentLabel": "내용",
+        "publishImmediately": "즉시 게시"
+      },
+      "buttons": {
+        "generating": "생성 중...",
+        "generateArticle": "게시물 생성",
+        "saving": "저장 중...",
+        "saveArticle": "게시물 저장",
+        "cancel": "취소"
+      },
+      "errors": {
+        "emptyKeyword": "키워드를 입력하세요",
+        "generateFailed": "기사 생성에 실패했습니다, 다시 시도해주세요",
+        "saveFailed": "기사 저장에 실패했습니다, 다시 시도해주세요"
+      },
+      "success": {
+        "generated": "기사가 성공적으로 생성되었습니다",
+        "published": "게시물이 게시되었습니다",
+        "savedAsDraft": "게시물이 초안으로 저장되었습니다"
+      }
+    },
+    "edit": {
+      "title": "게시물 편집",
+      "loading": "로딩 중...",
+      "articleForm": {
+        "titleLabel": "제목",
+        "excerptLabel": "초록",
+        "contentLabel": "내용",
+        "publishArticle": "게시물 게시"
+      },
+      "deleteDialog": {
+        "title": "삭제 확인",
+        "description": "이 게시물을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다."
+      },
+      "buttons": {
+        "saving": "저장 중...",
+        "saveArticle": "기사 저장",
+        "deleting": "삭제 중...",
+        "deleteArticle": "기사 삭제",
+        "delete": "삭제",
+        "cancel": "취소"
+      },
+      "errors": {
+        "articleNotFound": "게시물이 발견되지 않았습니다",
+        "fetchFailed": "게시물을 가져오지 못했습니다",
+        "updateFailed": "게시물을 업데이트하지 못했습니다",
+        "deleteFailed": "게시물을 삭제하지 못했습니다"
+      },
+      "success": {
+        "updated": "게시물이 성공적으로 업데이트되었습니다",
+        "deleted": "게시물이 성공적으로 삭제되었습니다"
+      }
+    },
+    "list": {
+      "title": "게시물 관리",
+      "buttons": {
+        "createNew": "새 게시물 작성",
+        "batchCreate": "일괄 생성"
+      },
+      "table": {
+        "headers": {
+          "title": "제목",
+          "createdDate": "생성일",
+          "status": "상태",
+          "actions": "액션"
+        },
+        "noArticles": "게시물이 없습니다"
+      },
+      "status": {
+        "published": "게시됨",
+        "draft": "ドラ프트"
+      },
+      "actions": {
+        "edit": "수정",
+        "view": "보기"
+      }
+    }
+  },
+  "limitReachedDialog": {
+    "title": "무료 분석 한도에 도달했습니다",
+    "description": "CraveU AI의令人興奮한 역할연기 기능을 체험해 보세요! 더 몰입感 있는 경험을 즐기세요!",
+    "maybeLaterButton": "나중에",
+    "visitButton": "CraveAI 방문"
+  },
+  "aiBeauty": {
+    "howItWorks": {
+      "title": "당신의 미모 점수 테스트는 어떻게 작동합니까",
+      "steps": {
+        "1": {
+          "title": "셀카 업로드",
+          "description": "명확한 selife 사진을 찍거나 기존 사진을 업로드하세요. 우리의 AI는 전면을 보여주는 잘 조명된 사진에서 가장 잘 작동하며, 얼굴 전체가 보이는 것이 좋습니다."
+        },
+        "2": {
+          "title": "AI 얼굴 분석",
+          "description": "고급 AI가 얼굴 특성, 피부 상태, 대칭성 및 비율을 분석합니다. Prettyscale과 같은 기술을 사용하지만 더 높은 정확도를 가지고 있습니다."
+        },
+        "3": {
+          "title": "뷰티 점수 확인",
+          "description": "1-10점 범위에서 매력 점수를 받고, 개별 특성의 상세한 분석과 맞춤형 개선 제안을 받습니다."
+        }
+      }
+    },
+    "promotion": {
+      "title": "오늘 당신의 진정한 아름다움 점수를 발견하세요",
+      "description": "가장 고도화된 AI 매력 테스트를 온라인에서 경험해보세요 - Prettyscale보다 더 정확합니다! 전면적인 얼굴 점수, 상세한 피부 분석, 그리고 최첨단 AI 얼굴 분석 기술로 구동되는 맞춤형 미용 통찰을 얻으세요.",
+      "tags": {
+        "beautyScoreTest": "뷰티 스코어 테스트",
+        "aiAttractivenessTest": "AI 매력 테스트",
+        "faceAnalysis": "얼굴 분석",
+        "onlineSkinAnalysis": "온라인 피부 분석",
+        "faceScore": "얼굴 점수"
+      }
+    },
+    "hero": {
+      "title": "AI 미용 및 매력 테스트",
+      "description": "고급 AI 얼굴 분석을 통해 즉시 얼굴 점수를 확인하세요. 아름다움 점수, 매력 평가, 그리고 맞춤형 피부 분석을 몇 초 만에 알아보세요."
+    },
+    "uploadSection": {
+      "title": "얼굴 분석 테스트",
+      "description": "셀카를 업로드하면 즉시 매력 점수와 자세한 얼굴 특징 분석을 받을 수 있습니다. Prettyscale과 유사하지만 더 발전된 AI 기술을 사용합니다.",
+      "uploadPrompt": "셀카 업로드",
+      "fileTypes": "JPG, PNG, 또는 GIF (최대 3MB)",
+      "portraitPreviewAlt": " 초상화 미리보기",
+      "changeButton": "변경",
+      "analyzingText": "얼굴 분석 중...",
+      "analyzeButton": "당신의 매력 점수 확인",
+      "features": {
+        "title": "전면 분석",
+        "facialFeatures": "얼굴 특징 점수 (눈, 코, 입, 구조)",
+        "attractivenessRating": "전반적인 매력 평가 (1-10점)",
+        "skinAnalysis": "피부 분석 및 톤 평가",
+        "comparison": "뷰티 기준과의 비교 및 맞춤형 팁"
+      }
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "items": {
+        "accuracy": {
+          "question": "이 AI 매력 테스트는 얼마나 정확합니까?",
+          "answer": "우리의 AI 뷰티 분석기는 얼굴의 대칭성, 비율, 그리고 보편적으로 매력적인 것으로 여겨지는 특성에 기반하여 매우 정확한 평가를 제공합니다. 미는 주관적이지만,我们的 알고리즘은 수천 명의 얼굴에 훈련되어 문화를 넘나드는 일반적인 미의 기준을 식별합니다."
+        },
+        "comparison": {
+          "question": "이것은 Prettyscale와닮았나요?",
+          "answer": "네, 우리의 얼굴 분석 도구는 Prettyscale과 유사하지만, 더 발전된 AI 기술을 사용하여 정확도를 높였습니다. 우리는 얼굴 특성과 피부 분석의 더 상세한 분해와 함께 맞춤형 추천을 제공합니다."
+        },
+        "calculation": {
+          "question": "내 미모 점수는 어떻게 계산됩니까?",
+          "answer": "당신의 얼굴 점수는 눈, 코, 입, 구조와 같은 주요 얼굴 특성, 피부 상태, 대칭성 및 비율을 분석하여 계산됩니다. AI는 이러한 측정 값을 미모 기준과 비교하여 1-10점 만점으로 전체 매력 점수를 생성합니다."
+        },
+        "privacy": {
+          "question": "내 사진이 저장되거나 공유됩니까?",
+          "answer": "귀하의 개인정보 보호가 가장 중요합니다. 업로드하신 사진은 분석용으로만 사용되며 영구적으로 저장되지 않으며第三者와 공유되지 않습니다. 모든 처리는 보안이担保된 서버에서 이루어지며 분석 후 이미지는 삭제됩니다."
+        },
+        "skinAnalysis": {
+          "question": "이 서비스로 피부 분석도 할 수 있나요?",
+          "answer": "네! 우리 AI뷰티 분석기는 평가의 일부로 피부를 포괄적으로 분석합니다. 피부 투명도, 토너, 텍스처, 전체적인 피부톤을 평가하여 특정 피부 관리 개선을 위한 추천을 제공합니다."
+        },
+        "improvement": {
+          "question": "내 매력 점수를 어떻게 향상시킬 수 있을까요?",
+          "answer": "분석 후, 귀하의 특정 결과에 기초한 맞춤형 추천을 제공합니다. 이는 더 나은 사진 각도, 조명, 피부 관리 팁, 또는 강조할 수 있는 특징을 포함할 수 있습니다. 우리의 도구는 재미있고 정보가 풍부한 것을 목표로 합니다!"
+        }
+      }
+    },
+    "emptyResult": {
+      "title": "얼굴 점수 분석",
+      "description": "셀프 사진을 업로드하여 즉시 매력 점수와 자세한 얼굴 분석을 받으세요",
+      "buttonText": "미용 테스트 시작"
+    },
+    "errorResult": {
+      "title": "분석 오류",
+      "tryAgainButton": "다시 시도"
+    },
+    "analysisResult": {
+      "title": "매력 점수",
+      "sections": {
+        "facialFeatures": "얼굴 특징",
+        "skinAnalysis": "피부 분석",
+        "expressionPresence": "표정 & 매력",
+        "beautyStrengths": "당신의 아름다움 강점",
+        "enhancementTips": "향상 팁"
+      },
+      "categories": {
+        "eyes": "눈",
+        "nose": "코",
+        "mouth": "입",
+        "facialStructure": "얼굴 구조",
+        "skinClarity": "피부 clarity",
+        "skinTone": "피부 tone",
+        "complexion": " complexion",
+        "overallBalance": "전반적인 균형",
+        "attractivenessImpact": "매력성향"
+      }
+    }
+  }
+}

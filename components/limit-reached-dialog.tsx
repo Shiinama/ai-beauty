@@ -1,7 +1,7 @@
 'use client'
 
 import { Sparkles } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -12,7 +12,7 @@ import {
   DialogDescription,
   DialogFooter
 } from '@/components/ui/dialog'
-import { About } from '@/config/site-info'
+import { useRouter } from '@/i18n/navigation'
 
 interface LimitReachedDialogProps {
   open: boolean
@@ -21,24 +21,25 @@ interface LimitReachedDialogProps {
 
 export function LimitReachedDialog({ open, onOpenChange }: LimitReachedDialogProps) {
   const router = useRouter()
+  const t = useTranslations('limitReachedDialog')
+  const about = useTranslations('about')
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-purple-500" />
-            Free Analysis Limit Reached
+            {t('title')}
           </DialogTitle>
-          <DialogDescription>
-            Try out CraveU AI's exciting role-playing features for a more immersive experience!
-          </DialogDescription>
+          <DialogDescription>{t('description')}</DialogDescription>
         </DialogHeader>
         <DialogFooter className="gap-2 sm:justify-center">
           <Button variant="outline" onClick={() => onOpenChange(false)}>
-            Maybe Later
+            {t('maybeLaterButton')}
           </Button>
-          <Button variant="outline" onClick={() => router.push(About.team.productUrl)}>
-            Visit CraveAI
+          <Button variant="outline" onClick={() => router.push(about('team.productUrl'))}>
+            {t('visitButton')}
           </Button>
         </DialogFooter>
       </DialogContent>

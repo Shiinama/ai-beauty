@@ -27,5 +27,14 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "cSpell.words": ["Genshin", "supabase", "Supabse"]
+  "cSpell.words": [
+    "Genshin",
+    "supabase",
+    "Supabse"
+  ],
+  "i18n-ally.localesPaths": [
+    "i18n",
+    "messages"
+  ],
+  "i18n-ally.keystyle": "nested"
 }

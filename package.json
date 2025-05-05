@@ -17,7 +17,12 @@
     "db:migrate-remote": "tsx scripts/migrate.ts remote",
     "db:seed": "wrangler dev scripts/seed.ts",
     "db:studio:local": "LOCAL_DB_PATH=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio",
-    "db:studio:remote": "drizzle-kit studio"
+    "db:studio:remote": "drizzle-kit studio",
+    "i18n:translate": "tsx scripts/18n/cli.ts --mode=missing",
+    "i18n:delete": "tsx scripts/18n/cli.ts --d",
+    "i18n:keys": "tsx scripts/18n/cli.ts --mode=keys --keys",
+    "i18n:list": "tsx scripts/18n/cli.ts --list-locales",
+    "i18n:sequential": "tsx scripts/18n/sequential-cli.ts"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.9.0",
@@ -42,13 +47,15 @@
     "markdown-to-jsx": "^7.7.4",
     "next": "15.3.1",
     "next-auth": "5.0.0-beta.25",
+    "next-intl": "^4.1.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.55.0",
     "react-syntax-highlighter": "^15.6.1",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.12",
@@ -60,6 +67,7 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/yargs": "^17.0.33",
     "better-sqlite3": "^11.9.1",
     "cloudflare": "^4.2.0",
     "dotenv": "^16.5.0",

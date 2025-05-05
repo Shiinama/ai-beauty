@@ -1,6 +1,7 @@
 'use client'
 
 import { useSession, signOut } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 
 import { getUserAnalysisUsage } from '@/actions/userAnalysis'
@@ -44,6 +45,7 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | undefined>(undefined)
 
 export function UserProvider({ children }: { children: ReactNode }) {
+  const t = useTranslations('userProvider')
   const { data: session, status } = useSession()
   const userId = session?.user?.id
 
@@ -76,7 +78,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
       const count = await getUserAnalysisUsage(id)
       setUsageCount(count)
     } catch (error) {
-      console.error('Error fetching usage count:', error)
+      console.error(t('errorFetchingUsage'), error)
     } finally {
       setLoading(false)
     }
@@ -173,12 +175,14 @@ export const useUser = () => {
 
 // Wrapper component for the login modal
 function LoginModalWrapper({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
+  const t = useTranslations('userProvider.loginModal')
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-center text-2xl font-bold">Welcome to AI Beauty Analyzer</DialogTitle>
-          <DialogDescription className="text-center">Sign in to continue your journey</DialogDescription>
+          <DialogTitle className="text-center text-2xl font-bold">{t('title')}</DialogTitle>
+          <DialogDescription className="text-center">{t('description')}</DialogDescription>
         </DialogHeader>
         <LoginForm onSuccess={() => onOpenChange(false)} />
       </DialogContent>
