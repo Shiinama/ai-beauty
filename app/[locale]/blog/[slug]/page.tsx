@@ -8,13 +8,13 @@ import { formatDate } from '@/lib/utils'
 export const runtime = 'edge'
 
 interface PostSlugPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: PostSlugPageProps) {
-  const { slug } = params
+  const { slug } = await params
   const article = await getArticleBySlug(slug)
   const t = await getTranslations('blog')
   const siteInfoT = await getTranslations('siteInfo')
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PostSlugPageProps) {
 }
 
 const PostSlugPage = async ({ params }: PostSlugPageProps) => {
-  const { slug } = params
+  const { slug } = await params
   const article = await getArticleBySlug(slug)
   const t = await getTranslations('blog')
 

@@ -3,7 +3,14 @@
     "loading": "جار التحميل...",
     "cancel": "إلغاء",
     "close": "닫기",
-    "freeUsage": "{used}/{total} رصيد مجاني"
+    "freeUsage": "{used}/{total} رصيد مجاني",
+    "previous": "السابق",
+    "next": "",
+    "save": "",
+    "edit": "",
+    "delete": "",
+    "submit": "",
+    "morePages": ""
   },
   "header": {
     "about": "حول"
@@ -70,7 +77,7 @@
       "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
       "expertise": "نحن نspecialize في NSFW AI Role Play مع م.setModel_effects وCapabilities_.Leading في توليد الصور.",
       "whyChoose": "لماذا تختار منتجاتنا",
-      "weAre": "نحن <company>Cozyai LLC</company>، فريق <product>CraveU.ai</product>."
+      "weAre": ""
     },
     "story": {
       "title": "قصتنا",

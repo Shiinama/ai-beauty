@@ -3,7 +3,14 @@
     "loading": "正在加载...",
     "cancel": "取消",
     "close": "关闭",
-    "freeUsage": "{used}/{total} 免费积分"
+    "freeUsage": "{used}/{total} 免费积分",
+    "previous": "上一个",
+    "next": "",
+    "save": "",
+    "edit": "",
+    "delete": "",
+    "submit": "",
+    "morePages": ""
   },
   "header": {
     "about": "关于"
@@ -180,7 +187,7 @@
       "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
       "expertise": "我们专注于 NSFW AI 角色扮演，提供行业领先的模型效果和图像生成能力。",
       "whyChoose": "为什么选择我们的产品",
-      "weAre": "我们是<company>Cozyai LLC</company>，<product>CraveU.ai</product>的团队。"
+      "weAre": ""
     },
     "story": {
       "title": "我们的故事",

@@ -64,14 +64,14 @@ export async function translateMessages(options: TranslationOptions): Promise<Tr
   try {
     // 读取英文消息文件作为源
     const messagesDir = path.join(process.cwd(), 'messages')
-    const englishMessagesPath = path.join(messagesDir, 'zh.json')
+    const englishMessagesPath = path.join(messagesDir, 'en.json')
     const englishMessagesText = await fs.readFile(englishMessagesPath, 'utf-8')
     const englishMessages = JSON.parse(englishMessagesText)
 
     // 确定要翻译的语言
     const localesToTranslate = targetLocales
-      ? locales.filter((l) => targetLocales.includes(l.code) && l.code !== 'zh')
-      : locales.filter((l) => l.code !== 'zh')
+      ? locales.filter((l) => targetLocales.includes(l.code) && l.code !== 'en')
+      : locales.filter((l) => l.code !== 'en')
 
     if (localesToTranslate.length === 0) {
       return [{ success: false, locale: 'all', error: '没有找到要翻译的目标语言' }]

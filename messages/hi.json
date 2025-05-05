@@ -3,7 +3,14 @@
     "loading": "โหลดอยู่...",
     "cancel": "ยกเลิก",
     "close": "ปิด",
-    "freeUsage": "{used}/{total} मुफ्त क्रेडिट"
+    "freeUsage": "{used}/{total} मुफ्त क्रेडिट",
+    "previous": "पिछला",
+    "next": "",
+    "save": "",
+    "edit": "",
+    "delete": "",
+    "submit": "",
+    "morePages": ""
   },
   "header": {
     "about": "बारे में"
@@ -70,7 +77,7 @@
       "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
       "expertise": "हम NSFW AI Role Play में विशेषज्ञ हैं, जिसमें उद्योग के आगे बढ़े मॉडल एफेक्ट्स और छवि जन्म क्षमताएं शामिल हैं।",
       "whyChoose": "हमारे उत्पादों को क्यों चुनना",
-      "weAre": "हम <company>Cozyai LLC</company> हैं, <product>CraveU.ai</product> की टीम।"
+      "weAre": ""
     },
     "story": {
       "title": "हमारी कहानी",

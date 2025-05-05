@@ -5,12 +5,19 @@ import { auth } from '@/lib/auth'
 
 export const runtime = 'edge'
 
-export default async function AdminLayout({ children, locale }: { children: ReactNode; locale: string }) {
+export default async function AdminLayout({
+  children,
+  params
+}: {
+  children: ReactNode
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
   const s = await auth()
   if (s?.user?.id !== process.env.NEXT_PUBLIC_ADMIN_ID) {
     redirect({
       href: '/',
-      locale: locale
+      locale
     })
   }
   return <div className="py-8">{children}</div>

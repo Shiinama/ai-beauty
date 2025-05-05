@@ -3,7 +3,14 @@
     "loading": "読み込み中...",
     "cancel": "キャンセル",
     "close": "閉じる",
-    "freeUsage": "{used}/{total} 無料クレジット"
+    "freeUsage": "{used}/{total} 無料クレジット",
+    "previous": "前へ",
+    "next": "",
+    "save": "",
+    "edit": "",
+    "delete": "",
+    "submit": "",
+    "morePages": ""
   },
   "header": {
     "about": "について"
@@ -70,7 +77,7 @@
       "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
       "expertise": "弊社はNSFW AIロールプレイングに特化しており、業界最先端のモデル効果と画像生成能力を誇っています。",
       "whyChoose": "私たちの製品を選ぶ理由",
-      "weAre": "<company>Cozyai LLC</company>です。私たちは<product>CraveU.ai</product>のチームです。"
+      "weAre": ""
     },
     "story": {
       "title": "私たちのストーリー",

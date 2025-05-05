@@ -3,7 +3,14 @@
     "loading": "Carregando...",
     "cancel": "Cancelar",
     "close": "Fechar",
-    "freeUsage": "{used}/{total} Créditos Grátis"
+    "freeUsage": "{used}/{total} Créditos Grátis",
+    "previous": "Anterior",
+    "next": "",
+    "save": "",
+    "edit": "",
+    "delete": "",
+    "submit": "",
+    "morePages": ""
   },
   "header": {
     "about": "Sobre"
@@ -70,7 +77,7 @@
       "productUrl": "https://craveu.ai/?utm_source=ai_beauty",
       "expertise": "Nós nos especializamos em NSFW AI Role Play com efeitos de modelo e capacidades de geração de imagens líderes no setor.",
       "whyChoose": "Por que escolher nossos produtos",
-      "weAre": "Somos <company>Cozyai LLC</company>, a equipe por trás do <product>CraveU.ai</product>."
+      "weAre": ""
     },
     "story": {
       "title": "Nossa história",

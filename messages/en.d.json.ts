@@ -6,7 +6,14 @@ declare const messages: {
     "loading": "Loading...",
     "cancel": "Cancel",
     "close": "Close",
-    "freeUsage": "{used}/{total} Free Credits"
+    "freeUsage": "{used}/{total} Free Credits",
+    "previous": "Previous",
+    "next": "Next",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "submit": "Submit",
+    "morePages": "View More Pages"
   },
   "header": {
     "about": "About"
