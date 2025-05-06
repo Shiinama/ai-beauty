@@ -1,6 +1,6 @@
 'use server'
 
-import { eq } from 'drizzle-orm'
+import { desc, eq } from 'drizzle-orm'
 
 import { locales } from '@/i18n/routing'
 import { createAI } from '@/lib/ai'
@@ -179,7 +179,7 @@ export async function saveGeneratedArticle(
 // Update the getAllArticles function
 export async function getAllArticles(locale?: string) {
   const database = createDb()
-  const query = database.select().from(posts).orderBy(posts.createdAt)
+  const query = database.select().from(posts).orderBy(desc(posts.publishedAt))
 
   // If locale is provided, filter by locale
   if (locale) {
