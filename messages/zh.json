@@ -10,7 +10,9 @@
     "edit": "",
     "delete": "",
     "submit": "",
-    "morePages": ""
+    "morePages": "",
+    "language": "语詞",
+    "selectLanguage": "选择语詞"
   },
   "header": {
     "about": "关于"

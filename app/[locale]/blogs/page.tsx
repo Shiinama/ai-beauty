@@ -17,8 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function BlogPage() {
-  const allArticles = await getAllArticles()
+export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const allArticles = await getAllArticles(locale)
   const t = await getTranslations('blogs')
 
   // Only show published articles

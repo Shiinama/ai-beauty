@@ -10,7 +10,9 @@
     "edit": "",
     "delete": "",
     "submit": "",
-    "morePages": ""
+    "morePages": "",
+    "language": "詞詞",
+    "selectLanguage": "詞詞の選択"
   },
   "header": {
     "about": "について"

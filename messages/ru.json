@@ -10,7 +10,9 @@
     "edit": "",
     "delete": "",
     "submit": "",
-    "morePages": ""
+    "morePages": "",
+    "language": "Язык",
+    "selectLanguage": "Выбрать язык"
   },
   "header": {
     "about": "О"

@@ -10,7 +10,9 @@
     "edit": "",
     "delete": "",
     "submit": "",
-    "morePages": ""
+    "morePages": "",
+    "language": "Língua",
+    "selectLanguage": "Selecionar língua"
   },
   "header": {
     "about": "Sobre"

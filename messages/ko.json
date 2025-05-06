@@ -10,7 +10,9 @@
     "edit": "",
     "delete": "",
     "submit": "",
-    "morePages": ""
+    "morePages": "",
+    "language": "겸어",
+    "selectLanguage": "겸어 선탔"
   },
   "header": {
     "about": "에 대하여"

@@ -10,13 +10,16 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
 import { Textarea } from '@/components/ui/textarea'
 import { useRouter } from '@/i18n/navigation'
+import { locales } from '@/i18n/routing'
 
 export default function BatchArticlesPage() {
   const router = useRouter()
   const t = useTranslations('admin.batch')
+  const common = useTranslations('common')
   const [keywordsInput, setKeywordsInput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
@@ -24,6 +27,7 @@ export default function BatchArticlesPage() {
   const [generatedArticles, setGeneratedArticles] = useState<Array<any>>([])
   const [results, setResults] = useState<Array<any>>([])
   const [selectAll, setSelectAll] = useState(true)
+  const [selectedLocale, setSelectedLocale] = useState('en') // Default to English
 
   const handleGenerate = async () => {
     if (!keywordsInput.trim()) {
@@ -44,7 +48,10 @@ export default function BatchArticlesPage() {
 
     setIsGenerating(true)
     try {
-      const articles = await generateBatchArticles({ keywords })
+      const articles = await generateBatchArticles({
+        keywords,
+        locale: selectedLocale // Pass the selected locale to the API
+      })
 
       // Add selected property to each successful article
       const articlesWithSelection = articles.map((item) => ({
@@ -81,7 +88,8 @@ export default function BatchArticlesPage() {
       .filter((item) => item.status === 'success' && item.selected)
       .map((item) => ({
         ...item.article,
-        selected: true
+        selected: true,
+        locale: selectedLocale // Ensure locale is passed to save function
       }))
 
     if (selectedArticles.length === 0) {
@@ -165,6 +173,25 @@ export default function BatchArticlesPage() {
               disabled={isGenerating}
               className="mt-4 font-mono"
             />
+          </div>
+
+          {/* Language selection dropdown */}
+          <div className="mb-4">
+            <Label htmlFor="language" className="mb-2 block">
+              {common('language')}
+            </Label>
+            <Select value={selectedLocale} onValueChange={setSelectedLocale}>
+              <SelectTrigger className="w-full sm:w-[240px]">
+                <SelectValue placeholder={common('selectLanguage')} />
+              </SelectTrigger>
+              <SelectContent>
+                {locales.map((locale) => (
+                  <SelectItem key={locale.code} value={locale.code}>
+                    {locale.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="mb-4 flex items-center space-x-2">

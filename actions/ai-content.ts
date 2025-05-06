@@ -2,19 +2,33 @@
 
 import { eq } from 'drizzle-orm'
 
+import { locales } from '@/i18n/routing'
 import { createAI } from '@/lib/ai'
 import { createDb } from '@/lib/db'
 import { posts } from '@/lib/db/schema'
 
 interface ArticleGenerationParams {
   keyword: string
+  locale?: string // Add locale parameter for language support
 }
 
 interface BatchArticleGenerationParams {
   keywords: string[]
+  locale?: string // Add locale parameter for batch generation
 }
 
-export async function generateArticle({ keyword }: ArticleGenerationParams) {
+// Helper function to get language name from locale code
+function getLanguageNameFromLocale(localeCode: string): string {
+  const locale = locales.find((l) => l.code === localeCode)
+  if (locale) {
+    return locale.name
+  }
+  return 'English' // Default to English if locale not found
+}
+
+export async function generateArticle({ keyword, locale = 'en' }: ArticleGenerationParams) {
+  const languageName = getLanguageNameFromLocale(locale)
+
   const systemPrompt = `
   You are an SEO content writer. Your job is write blog post optimized for keyword, title and outline. Please use "keywords" as the keyword to search the first 20 search results on Google, and record their article structure and titles. Then, based on these contents, output an article that conforms to Google SEO logic and user experience. 
 
@@ -36,9 +50,15 @@ export async function generateArticle({ keyword }: ArticleGenerationParams) {
   - Include bullet points and lists where appropriate
   - Add internal linking opportunities where relevant
   
+  Language requirement:
+  - Write the entire article in ${languageName} language
+  - Ensure the content is culturally appropriate for ${languageName}-speaking audiences
+  - Use proper grammar, idioms, and expressions specific to ${languageName}
+  ${locale === 'ar' ? '- Follow right-to-left (RTL) text conventions' : ''}
+  
   Produce original, accurate, and valuable content of at least 10,000 tokens. Output ONLY the article content, starting with the H1 title.`
 
-  const userPrompt = `Create an article about "${keyword}". Optimize it for search engines while maintaining high-quality, valuable content for readers.`
+  const userPrompt = `Create an article about "${keyword}" in ${languageName} language. Optimize it for search engines while maintaining high-quality, valuable content for readers.`
 
   try {
     const cloudflareAI = createAI()
@@ -63,13 +83,14 @@ export async function generateArticle({ keyword }: ArticleGenerationParams) {
 
       const finalSlug = createSlug(extractedTitle)
 
-      const excerpt = await generateArticleExcerpt(content)
+      const excerpt = await generateArticleExcerpt(content, locale)
 
       return {
         title: extractedTitle,
         slug: finalSlug,
         content,
-        excerpt
+        excerpt,
+        locale // Store the locale with the article
       }
     }
   } catch (error) {
@@ -78,16 +99,26 @@ export async function generateArticle({ keyword }: ArticleGenerationParams) {
   }
 }
 
-async function generateArticleExcerpt(content: string) {
+async function generateArticleExcerpt(content: string, locale = 'en') {
   try {
+    const languageName = getLanguageNameFromLocale(locale)
     const cloudflareAI = createAI()
 
     const analysisResult = await cloudflareAI.run('@cf/meta/llama-4-scout-17b-16e-instruct', {
       messages: [
         {
           role: 'system',
-          content:
-            'You are a professional content editor. Your task is to create a concise, SEO-friendly excerpt for the article content to be used as a meta description. Requirements: 1) Be compelling and engaging, 2) Include the main keyword naturally, 3) Be STRICTLY UNDER 140 characters (ideally 130-140 characters), 4) Provide value and encourage clicks. CRITICAL INSTRUCTION: Return ONLY the plain text excerpt with no additional commentary, formatting, or explanations. Do not include quotation marks, labels, or any text besides the excerpt itself. The entire response must be usable as a meta description without any editing.'
+          content: `You are a professional content editor. Your task is to create a concise, SEO-friendly excerpt for the article content to be used as a meta description. 
+            
+            Requirements: 
+            1) Be compelling and engaging
+            2) Include the main keyword naturally
+            3) Be STRICTLY UNDER 140 characters (ideally 130-140 characters)
+            4) Provide value and encourage clicks
+            5) Write the excerpt in ${languageName} language
+            ${locale === 'ar' ? '6) Follow right-to-left (RTL) text conventions' : ''}
+            
+            CRITICAL INSTRUCTION: Return ONLY the plain text excerpt with no additional commentary, formatting, or explanations. Do not include quotation marks, labels, or any text besides the excerpt itself. The entire response must be usable as a meta description without any editing.`
         },
         { role: 'user', content: content }
       ],
@@ -108,12 +139,13 @@ async function generateArticleExcerpt(content: string) {
 
 // 从标题创建 slug
 function createSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // 移除特殊字符
-    .replace(/\s+/g, '-') // 将空格替换为连字符
-    .replace(/-+/g, '-') // 移除多余的连字符
-    .trim()
+  return encodeURIComponent(
+    title
+      .toLowerCase()
+      .replace(/\s+/g, '-') // 将空格替换为连字符
+      .replace(/-+/g, '-') // 移除多余的连字符
+      .trim()
+  )
 }
 
 // 将生成的文章保存到数据库
@@ -123,6 +155,7 @@ export async function saveGeneratedArticle(
     slug: string
     content: string
     excerpt: string
+    locale?: string
   },
   publishImmediately = true
 ) {
@@ -134,6 +167,7 @@ export async function saveGeneratedArticle(
     title: article.title,
     excerpt: article.excerpt,
     content: article.content,
+    locale: article.locale || 'en', // Add locale to database
     publishedAt: publishImmediately ? new Date() : undefined,
     createdAt: new Date(),
     updatedAt: new Date()
@@ -142,10 +176,17 @@ export async function saveGeneratedArticle(
   await database.insert(posts).values(postData)
 }
 
-// 获取所有文章
-export async function getAllArticles() {
+// Update the getAllArticles function
+export async function getAllArticles(locale?: string) {
   const database = createDb()
-  return await database.select().from(posts).orderBy(posts.createdAt)
+  const query = database.select().from(posts).orderBy(posts.createdAt)
+
+  // If locale is provided, filter by locale
+  if (locale) {
+    return await query.where(eq(posts.locale, locale))
+  }
+
+  return await query
 }
 
 // 根据 slug 获取单篇文章
@@ -163,6 +204,7 @@ export async function updateArticle(
     content?: string
     excerpt?: string
     publishedAt?: Date | null
+    locale?: string
   }
 ) {
   const database = createDb()
@@ -191,7 +233,7 @@ export async function deleteArticle(slug: string) {
 }
 
 export async function generateBatchArticles(params: BatchArticleGenerationParams) {
-  const { keywords } = params
+  const { keywords, locale = 'en' } = params
   const concurrencyLimit = 10
   const results = []
 
@@ -202,7 +244,7 @@ export async function generateBatchArticles(params: BatchArticleGenerationParams
     // Generate articles in this batch concurrently
     const batchPromises = batch.map(async (keyword) => {
       try {
-        const article = await generateArticle({ keyword })
+        const article = await generateArticle({ keyword, locale })
         return {
           keyword,
           article,
@@ -230,6 +272,7 @@ export async function saveBatchArticles(
     slug: string
     content: string
     excerpt: string
+    locale?: string
     selected?: boolean
   }>,
   publishImmediately = true
@@ -251,6 +294,7 @@ export async function saveBatchArticles(
           title: article.title,
           excerpt: article.excerpt,
           content: article.content,
+          locale: article.locale || 'en', // Add locale to database
           publishedAt: publishImmediately ? new Date() : undefined,
           createdAt: new Date(),
           updatedAt: new Date()

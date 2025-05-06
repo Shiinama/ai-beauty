@@ -10,7 +10,9 @@
     "edit": "",
     "delete": "",
     "submit": "",
-    "morePages": ""
+    "morePages": "",
+    "language": "भाषा",
+    "selectLanguage": "भाषा चयन करें"
   },
   "header": {
     "about": "बारे में"

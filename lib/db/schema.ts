@@ -100,6 +100,7 @@ export const posts = sqliteTable('posts', {
   title: text('title').notNull(),
   excerpt: text('excerpt').notNull(),
   content: text('content').notNull(),
+  locale: text('locale').notNull().default('en'), // Add locale field with default 'en'
   publishedAt: integer('published_at', { mode: 'timestamp_ms' }),
   createdAt: integer('created_at', { mode: 'timestamp_ms' })
     .default(sql`CURRENT_TIMESTAMP`)

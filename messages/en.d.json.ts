@@ -13,7 +13,9 @@ declare const messages: {
     "edit": "Edit",
     "delete": "Delete",
     "submit": "Submit",
-    "morePages": "View More Pages"
+    "morePages": "View More Pages",
+    "language": "Language",
+    "selectLanguage": "Select Language"
   },
   "header": {
     "about": "About"
