@@ -94,8 +94,7 @@ export async function generateArticle({ keyword, locale = 'en' }: ArticleGenerat
       }
     }
   } catch (error) {
-    console.error('Error generating article:', error)
-    throw new Error('Failed to generate article content')
+    throw error
   }
 }
 

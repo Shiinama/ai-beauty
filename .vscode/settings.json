@@ -32,9 +32,6 @@
     "supabase",
     "Supabse"
   ],
-  "i18n-ally.localesPaths": [
-    "i18n",
-    "messages"
-  ],
+  "i18n-ally.localesPaths": ["messages", "i18n"],
   "i18n-ally.keystyle": "nested"
 }

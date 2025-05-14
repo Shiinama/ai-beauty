@@ -18,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('siteInfo.meta')
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
     title: t('title'),
     description: t('description'),
     icons: {
